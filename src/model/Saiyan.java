@@ -46,5 +46,11 @@ public class Saiyan extends Character{
         this.sai_haveTail = sai_haveTail;
     }
 
+    @Override
+    public String toString (){
+        return super.toString()+" Nivel SSJ Max: " +sai_level+ " Sangre Pura: " +boolean_ToString()+ " Tiene cola: "+boolean_ToString();
+    }
+
+
 
 }

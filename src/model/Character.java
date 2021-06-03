@@ -67,23 +67,26 @@ public abstract class Character {
 
     ///Pasamos a texto lo que nos manden del booleano, para representar bien su estado.
 
+
+
+
     public String boolean_ToString(){
 
         String answer;
 
         if (char_isAlive)
         {
-            answer = "Vivo";
+            answer = "Si";
         }
         else {
-            answer = "Muerto";
+            answer = "No";
         }
         return answer;
     }
 
     @Override
     public String toString(){
-        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet;
+        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Esta vivo: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet;
     }
 
 
