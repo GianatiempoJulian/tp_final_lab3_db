@@ -61,14 +61,11 @@ public abstract class Character {
         return 100;
     }
 
-    public int hit_ki() {
+    public double hit_ki() {
         return 200;
     }
 
     ///Pasamos a texto lo que nos manden del booleano, para representar bien su estado.
-
-
-
 
     public String boolean_ToString(){
 
@@ -76,17 +73,17 @@ public abstract class Character {
 
         if (char_isAlive)
         {
-            answer = "Si";
+            answer = "Vivo";
         }
         else {
-            answer = "No";
+            answer = "Muerto";
         }
         return answer;
     }
 
     @Override
     public String toString(){
-        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Esta vivo: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet;
+        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet + " Ataque: " +hit_basic()+ " Ataque especial :" + hit_ki();
     }
 
 
