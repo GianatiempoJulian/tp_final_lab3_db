@@ -1,15 +1,15 @@
 package model;
 
-public class Namekiano extends Character {
+public class Namekian extends Character {
 	private String nam_type; ///tipo : comun o combatiente.
 	private boolean nam_fusion;
 	
-	public Namekiano() {
+	public Namekian() {
 		super();
 		nam_type = "comun";
 		nam_fusion =false;
 	}
-	public Namekiano(String char_name, double char_ki, boolean char_isAlive, String char_planet,String nam_type,boolean nam_fusion) {
+	public Namekian(String char_name, double char_ki, boolean char_isAlive, String char_planet, String nam_type, boolean nam_fusion) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.nam_fusion = nam_fusion;
 		this.nam_type = nam_type;

@@ -1,14 +1,14 @@
 package model;
 
-public class Androide extends Character {
+public class Android extends Character {
 	private String and_creator ;
 	
-	public Androide() {
+	public Android() {
 		super();
 		and_creator = "Red Ribbon";
 	}
 	
-	public Androide (String char_name, double char_ki, boolean char_isAlive, String char_planet,String and_creator) {
+	public Android(String char_name, double char_ki, boolean char_isAlive, String char_planet, String and_creator) {
 		super(char_name,char_ki,char_isAlive,char_planet);
 		this.and_creator = and_creator;
 	}

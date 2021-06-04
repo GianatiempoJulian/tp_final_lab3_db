@@ -1,14 +1,14 @@
 package model;
 
-public class Humano extends Character {
+public class Human extends Character {
 
 	private boolean hum_fighter;
 	
-	 public Humano() {
+	 public Human() {
 		super();
 		hum_fighter = false;
 	}
-	public Humano(String char_name, double char_ki, boolean char_isAlive, String char_planet,boolean hum_fighter) {
+	public Human(String char_name, double char_ki, boolean char_isAlive, String char_planet, boolean hum_fighter) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.hum_fighter = hum_fighter;
 		
