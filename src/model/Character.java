@@ -61,7 +61,7 @@ public abstract class Character {
         return 100;
     }
 
-    public int hit_ki() {
+    public double hit_ki() {
         return 200;
     }
 
@@ -83,7 +83,7 @@ public abstract class Character {
 
     @Override
     public String toString(){
-        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet;
+        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet + " Ataque: " +hit_basic()+ " Ataque especial :" + hit_ki();
     }
 
 
