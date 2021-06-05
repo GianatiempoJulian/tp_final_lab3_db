@@ -1,6 +1,12 @@
 package model;
 
+<<<<<<< HEAD:src/model/Namekian.java
+import interfaz.INamekAttacks;
+
+public class Namekian extends Character implements INamekAttacks{
+=======
 public class Namekian extends Character {
+>>>>>>> main:src/model/Namekiano.java
 	private String nam_type; ///tipo : comun o combatiente.
 	private boolean nam_fusion;
 	
@@ -67,6 +73,26 @@ public class Namekian extends Character {
 	@Override
 	public String toString() {
 		return super.toString()+"  Raza : Namekiano Tipo :" + nam_type + ", Esta fusionado: " + nam_boolean_ToString() ;
+	}
+	@Override
+	public int makankosappo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int namek_fusion() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int healing() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int hellzone_granade() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

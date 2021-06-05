@@ -1,6 +1,12 @@
 package model;
 
+<<<<<<< HEAD:src/model/Human.java
+import interfaz.IHumanAttacks;
+
+public class Human extends Character implements IHumanAttacks{
+=======
 public class Human extends Character {
+>>>>>>> main:src/model/Humano.java
 
 	private boolean hum_fighter;
 	
@@ -53,5 +59,20 @@ public class Human extends Character {
 	@Override
 	public String toString() {
 		return super.toString()+"  Raza : Humano Guerrero :" +hum_boolean_ToString() ;
+	}
+	@Override
+	public int solar_flare() {
+		System.out.println("Taiyōken!!\n");
+		return 100;
+	}
+	@Override
+	public int kaio_ken() {
+		System.out.println("Kaiō Keeen!!\n");
+		return 2;
+	}
+	@Override
+	public int kienzan() {
+		System.out.println("Kien ZAN!!\n");
+		return 1000;
 	}
 }
