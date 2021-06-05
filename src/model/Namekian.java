@@ -1,8 +1,12 @@
 package model;
 
+<<<<<<< HEAD:src/model/Namekian.java
 import interfaz.INamekAttacks;
 
 public class Namekian extends Character implements INamekAttacks{
+=======
+public class Namekian extends Character {
+>>>>>>> main:src/model/Namekiano.java
 	private String nam_type; ///tipo : comun o combatiente.
 	private boolean nam_fusion;
 	

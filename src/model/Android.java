@@ -1,8 +1,6 @@
 package model;
 
-import interfaz.IAndroidAttacks;
-
-public class Android extends Character implements IAndroidAttacks {
+public class Android extends Character {
 	private String and_creator ;
 	
 	public Android() {
@@ -37,29 +35,5 @@ public class Android extends Character implements IAndroidAttacks {
 	public String toString() {
 		
 		return super.toString()+" Raza: Androide"+ " Creador : "+and_creator;
-	}
-
-	@Override
-	public int barrage() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int infinty_bullet() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int power_wave() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int absorb_power() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 }

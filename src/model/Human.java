@@ -1,8 +1,12 @@
 package model;
 
+<<<<<<< HEAD:src/model/Human.java
 import interfaz.IHumanAttacks;
 
 public class Human extends Character implements IHumanAttacks{
+=======
+public class Human extends Character {
+>>>>>>> main:src/model/Humano.java
 
 	private boolean hum_fighter;
 	

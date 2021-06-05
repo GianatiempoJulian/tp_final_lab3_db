@@ -25,7 +25,10 @@ public class CollectionPj<T> {
 		while(itrIterator.hasNext()) {
 			T element = itrIterator.next();
 			System.out.println(element);
+<<<<<<< HEAD
 			System.out.println("\n");
+=======
+>>>>>>> main
 		}
 		
 	}
