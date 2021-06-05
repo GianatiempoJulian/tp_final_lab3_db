@@ -1,6 +1,8 @@
 package model;
 
-public class Saiyan extends Character{
+import interfaz.ISaiyanAttacks;
+
+public class Saiyan extends Character implements ISaiyanAttacks{
 
     private int sai_level;
     private boolean sai_pureBlood;
@@ -50,6 +52,30 @@ public class Saiyan extends Character{
     public String toString (){
         return super.toString()+" Nivel SSJ Max: " +sai_level+ " Sangre Pura: " +boolean_ToString()+ " Tiene cola: "+boolean_ToString();
     }
+
+	@Override
+	public int kamehameha() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int garlick_hoo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int ki_blast() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int expansive_wave() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 
 
