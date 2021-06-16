@@ -1,12 +1,14 @@
 package model;
 
+import java.io.Serializable;
+
 import interfaz.IAndroidAttacks;
 
 public class Android extends Character implements IAndroidAttacks {
 	private String and_creator ;
 	
 	public Android() {
-		super();
+		super(); 
 		and_creator = "Red Ribbon";
 	}
 	

@@ -1,11 +1,13 @@
 package model;
 
+import java.io.Serializable;
+
 import interfaz.INamekAttacks;
 
-public class Namekian extends Character implements INamekAttacks{
+public class Namekian extends Character implements INamekAttacks, Serializable {
 	private String nam_type; ///tipo : comun o combatiente.
 	private boolean nam_fusion;
-	
+	 
 	public Namekian() {
 		super();
 		nam_type = "comun";
