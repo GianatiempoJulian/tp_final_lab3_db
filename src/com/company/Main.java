@@ -1,5 +1,9 @@
 package com.company;
 
+import java.io.File;
+import java.io.IOException;
+
+import files.Archivo;
 import model.Android;
 import model.Character;
 import model.CollectionPj;
@@ -55,7 +59,7 @@ public class Main {
     	
     	Saiyan vegetta = new Saiyan("Vegetta",1000000000 , true , "Tierra", 2, true, true );
     	
-    	Saiyan goku = new Saiyan("Goku",2000000000 , true , "Tierra", 3, true, true );
+    	Character goku = new Saiyan("Goku",2000000000 , true , "Tierra", 3, true, true );
     	
     	Saiyan gohan = new Saiyan("Gohan",900000000 , true , "Tierra", 2, false, true );
     	
@@ -64,33 +68,52 @@ public class Main {
     	//Personajes agregados a la colectora
     	
     	CollectionPj<Character> colectora1 = new CollectionPj<Character>();
-    	colectora1.addElement(dende);
-    	colectora1.addElement(piccolo);
-    	colectora1.addElement(nail);
-    	colectora1.addElement(kingPiccolo);
-    	colectora1.addElement(numero17);
-    	colectora1.addElement(numero18);
-    	colectora1.addElement(numero16);
-    	colectora1.addElement(numero20);
-    	colectora1.addElement(krillin);
-    	colectora1.addElement(yamcha);
-    	colectora1.addElement(tenShinHan);
-    	colectora1.addElement(chaoz);
-    	colectora1.addElement(frezerDemon);
-    	colectora1.addElement(kingCold);
-    	colectora1.addElement(cooler);
-    	colectora1.addElement(majinBoo);
-    	colectora1.addElement(vegetta);
-    	colectora1.addElement(goku);
-    	colectora1.addElement(gohan);
-    	colectora1.addElement(trunks);
+//    	colectora1.addElement(dende);
+//    	colectora1.addElement(piccolo);
+//    	colectora1.addElement(nail);
+//    	colectora1.addElement(kingPiccolo);
+//    	colectora1.addElement(numero17);
+//    	colectora1.addElement(numero18);
+//    	colectora1.addElement(numero16);
+//    	colectora1.addElement(numero20);
+//    	colectora1.addElement(krillin);
+//    	colectora1.addElement(yamcha);
+//    	colectora1.addElement(tenShinHan);
+//    	colectora1.addElement(chaoz);
+//    	colectora1.addElement(frezerDemon);
+//    	colectora1.addElement(kingCold);
+//    	colectora1.addElement(cooler);
+//    	colectora1.addElement(majinBoo);
+//    	colectora1.addElement(vegetta);
+//    	colectora1.addElement(goku);
+//    	colectora1.addElement(gohan);
+//    	colectora1.addElement(trunks);
     	System.out.println("Cantidad de personajes");
     	System.out.println(colectora1.amountElement());
     	System.out.println("\n");
     	System.out.println(colectora1.searchElement(numero17));
     	System.out.println(colectora1.searchElement(krillin));
     	colectora1.remove(frezerDemon);
-    	colectora1.show(); 
+//    	colectora1.show(); 
+    	
+    	///Manejo de archivos
+//    	File file = new File("archivoPrueba.txt"); //se inicializa el objeto archivo
+//    	if(!file.exists()) {
+//    		try {
+//    			file.createNewFile();
+//    			System.out.println(file.getName()+" ha sido creado");
+//			} catch (IOException ex) {
+//				ex.printStackTrace();
+//			}
+//    		
+//    	}
+    	/// los datos ya estan cargados en el archivo , no volver a ejecutar el write :D
+//    	colectora1.writeHash(); 
+    	colectora1.readHash2();
+    	
+    	
     }
+ 
+    
 }
  

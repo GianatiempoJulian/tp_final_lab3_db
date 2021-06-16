@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 import interfaz.ISaiyanAttacks;
 
 public class Saiyan extends Character implements ISaiyanAttacks{
