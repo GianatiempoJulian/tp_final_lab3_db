@@ -41,25 +41,25 @@ public class Android extends Character implements IAndroidAttacks {
 
 	@Override
 	public int barrage() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("You can't take THIS\n!!");
+		return 10000;
 	}
 
 	@Override
-	public int infinty_bullet() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int infinity_bullet() {
+		System.out.println("This are my energy BLASTS!!");
+		return 3000;
 	}
 
 	@Override
 	public int power_wave() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Power WAVE!!");
+		return 11000;
 	}
 
 	@Override
 	public int absorb_power() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Let me ABSORB YOU!!");
+		return 150;
 	}
 }

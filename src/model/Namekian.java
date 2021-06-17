@@ -72,23 +72,23 @@ public class Namekian extends Character implements INamekAttacks{
 	}
 	@Override
 	public int makankosappo() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("There's nowhere to run, TAKE THIS!\n");
+		return 5000;
 	}
 	@Override
 	public int namek_fusion() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("I will win! No matter who my opponent is, I will never lose! ... I have finally obtained maximum power!\n");
+		return 10000;
 	}
 	@Override
 	public int healing() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Don't worry I can regenerate my body..\n");
+		return -100;
 	}
 	@Override
 	public int hellzone_granade() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("HELLZONE GRENADE!!\n");
+		return 7000;
 	}
 	
 	

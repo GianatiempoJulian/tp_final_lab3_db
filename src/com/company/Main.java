@@ -89,6 +89,7 @@ public class Main {
     	System.out.println("\n");
     	System.out.println(colectora1.searchElement(numero17));
     	System.out.println(colectora1.searchElement(krillin));
+    	colectora1.showForPlanet("Galaxia");
     	colectora1.remove(frezerDemon);
     	colectora1.show(); 
     }

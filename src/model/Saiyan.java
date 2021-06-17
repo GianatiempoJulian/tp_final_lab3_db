@@ -55,26 +55,26 @@ public class Saiyan extends Character implements ISaiyanAttacks{
 
 	@Override
 	public int kamehameha() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("kaa.. mee. haa.. mee.. HAAA!!\n");
+		return 10000;
 	}
 
 	@Override
 	public int garlick_hoo() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Will turn to the dust of the universe, GALICK HOO!!\n");
+		return 24000;
 	}
 
 	@Override
 	public int ki_blast() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Take THIS!!\n");
+		return 3000;
 	}
 
 	@Override
 	public int expansive_wave() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("You are a fool, I'm going to crush you and throw you into the wind, HAAAA!!\n");
+		return 100000;
 	}
 
 
