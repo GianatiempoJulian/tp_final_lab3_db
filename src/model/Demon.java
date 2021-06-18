@@ -1,12 +1,14 @@
 package model;
 
+import java.io.Serializable;
+
 import interfaz.IDemonAttacks;
 
 public class Demon extends Character implements IDemonAttacks{
 	private int dem_numberTransformation;
 	private boolean dem_absorb;
 	
-	public Demon () {
+	public Demon () { 
 		super();
 		dem_absorb = false;
 		dem_numberTransformation = 0;
