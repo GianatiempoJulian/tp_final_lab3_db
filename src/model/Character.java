@@ -4,17 +4,21 @@ import java.io.Serializable;
 
 public abstract class Character implements Serializable  {
 
-    private int char_id;
+//    private int char_id;
     private String char_name;
     private double char_ki;
     private boolean char_isAlive;
     private String char_planet;
 
     public Character() {
+    	char_isAlive = true;
+    	char_ki = 100;
+    	char_name = "defecto" ;
+    	char_planet = " tierra";
     }
 
     public Character(String char_name, double char_ki, boolean char_isAlive, String char_planet) {
-        this.char_id = (int) (Math.random() * 10000000 + 1);
+//        this.char_id = (int) (Math.random() * 10000000 + 1);
         this.char_name = char_name;
         this.char_ki = char_ki;
         this.char_isAlive = char_isAlive;

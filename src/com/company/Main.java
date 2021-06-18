@@ -3,10 +3,11 @@ package com.company;
 import java.io.File;
 import java.io.IOException;
 
-import files.Archivo;
+import files.SaveRead;
 import model.Android;
 import model.Character;
 import model.CollectionPj;
+import model.Custom;
 import model.Demon;
 import model.Human;
 import model.Namekian;
@@ -107,9 +108,17 @@ public class Main {
 //			}
 //    		
 //    	}
+    	File mfile = new File("nuevoArchivo.txt");
     	/// los datos ya estan cargados en el archivo , no volver a ejecutar el write :D
 //    	colectora1.writeHash(); 
-    	colectora1.readHash2();
+//    	SaveRead.readHash(mfile);
+    	
+    	Custom federicoCustom = new Custom();
+    	CollectionPj<Custom> colectora2 = new CollectionPj<Custom>();
+    	colectora2.addElement(federicoCustom);
+    	File mFile2 = new File("personajesCreados");
+    	SaveRead.writeHash(colectora2.getCollectionHashSet(), mFile2);
+    	SaveRead.readHash(mFile2);
     	
     	
     }
