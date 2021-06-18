@@ -64,25 +64,26 @@ public class Demon extends Character implements IDemonAttacks{
 	public String toString() {
 		return super.toString()+ " Raza : Demonio  Numero de transformaciones: " + dem_numberTransformation + " Absorve :" + dem_absorb;
 	}
+	
 	@Override
 	public int finger_beam() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("It's time for you to give up\n");
+		return 30000;
 	}
 	@Override
 	public int supernova() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("I'm going to end this planet\n");
+		return 75000;
 	}
 	@Override
 	public int chocolate_beam() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Chocolates all of you\n");
+		return 90000;
 	}
 	@Override
 	public int mortal_ball() {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("This is my DEATH BALL\n");
+		return 80000;
 	}
 	
 	
