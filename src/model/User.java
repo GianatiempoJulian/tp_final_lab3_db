@@ -8,7 +8,7 @@ public class User {
     private String user_username;
     private String user_password;
     private boolean isAdmin;
-    //private Custom myCustom;
+    private Custom myCustom;
 
     public User(){};
 
@@ -19,6 +19,7 @@ public class User {
         this.user_username = user_username;
         this.user_password = user_password;
         this.isAdmin = isAdmin;
+        this.myCustom = null;
     }
 
     public int getUser_id() {
