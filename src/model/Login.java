@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Login {
 
     static Scanner scanner;
-    public static void login_menu(UserDataBase db){
+    public static void login_menu(CollectionPj misPj,UserDataBase db){
 
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -32,7 +32,7 @@ public class Login {
             if (aux!=null) {
 
                 if (aux.getUser_isAdmin() == true) {
-                    Menu.menu_admin(aux);
+                    Menu.menu_admin(misPj,db,aux);
                     System.out.println("1");
                 } else {
                     ///menu user

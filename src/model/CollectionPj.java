@@ -24,14 +24,14 @@ public class CollectionPj<T> {
 		return collectionHashSet.contains(element);
 	}
 
-	public void show() {
+	public String  show() {
 		Iterator<T> itrIterator = collectionHashSet.iterator();
+		String msg = "";
 		while (itrIterator.hasNext()) {
 			T element = itrIterator.next();
-			System.out.println(element);
-			System.out.println("\n");
+			msg = msg.concat("\n"+ element.toString());
 		}
-
+		return msg;
 	}
 	
 	public T searchElement(String name) {
@@ -50,20 +50,20 @@ public class CollectionPj<T> {
 	}
 	//Se puede implementar una excepcion en este metodo
 	
-	public void showForPlanet(String planet) {
+	public String showForPlanet(String planet) {
 		Iterator <T> itrIterator = collectionHashSet.iterator();
 		Character element1 = null;
+		String msg = "";
 		while(itrIterator.hasNext()) {
 			T element = itrIterator.next();
 			element1 = (Character)element;
-			if(element1.getChar_planet() == planet)
+			if(element1.getChar_planet().equals(planet))
 			{
-				System.out.println(element);
-				System.out.println("\n");
+				msg = msg.concat("\n"+ element.toString());
 			}
 			
 		}
-		
+		return msg;
 	}
 
 	public boolean remove(T element) {

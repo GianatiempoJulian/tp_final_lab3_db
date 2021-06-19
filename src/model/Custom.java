@@ -23,7 +23,7 @@ public class Custom extends Character{
 		gender = "null" ;
 		
 	}
-	public Custom (String char_name, double char_ki, boolean char_isAlive, String char_planet,int eyes,int hair,int mouth,int nose,int skin,String gender,String race) {
+	public Custom (String char_name, double char_ki, boolean char_isAlive, String char_planet,int eyes,int hair,int mouth,int nose,int skin,int aura,String gender,String race) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.aura = aura ;
 		this.eyes = eyes;
@@ -32,6 +32,7 @@ public class Custom extends Character{
 		this.mouth = mouth;
 		this.nose = nose;
 		this.skin = skin;
+
 	}
 	public int getEyes() {
 		return eyes;
