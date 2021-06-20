@@ -3,18 +3,22 @@ package com.company;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.util.Scanner;
 
 import files.SaveRead;
 import model.Character;
 import model.CollectionPj;
 import model.Custom;
+import model.Login;
 import model.Menu;
 import model.Namekian;
+import model.Register;
 import model.User;
 import model.UserDataBase;
 
 public class Main {
 
+	static Scanner scanner;
     public static void main(String[] args) {
     	
 //    	//Namekianos agregados
@@ -111,7 +115,7 @@ public class Main {
     	
     	///Menu Final
     	
-    	File mfile = new File("C:\\Users\\feder\\Desktop\\tp dragon 20\\tp_final_lab3_db\\nuevoArchivo.txt"); /// Se crean los 3 archivos
+    	File mfile = new File("nuevoArchivo.txt"); /// Se crean los 3 archivos
     	File archivocustom = new File("archivocustom.txt");
     	File archivousuario = new File("archivousuario.txt");
 //    	try {
@@ -143,8 +147,39 @@ public class Main {
     	System.out.println("coleccion user");
 //    	System.out.println("---------------");
     	SaveRead.readHashMap(archivousuario, userList);
-    	Menu.menu_admin(coleccionPj, coleccionCustom, userList, u, mfile, archivocustom,archivousuario);
     	
+    	scanner = new Scanner(System.in);
+    	int eleccionIngresar = 0;
+    	int eleccionWhile = 0;
+    	
+    	
+    	while (eleccionWhile == 0) 
+    	{
+    		
+    		
+    		System.out.println("Ingrese opcion:");
+    		System.out.println("1.Registrarse");	
+    		System.out.println("2.Ingresar");
+    		eleccionIngresar = scanner.nextInt();
+    	
+    	
+    		if (eleccionIngresar==1)
+    		{
+    			u = Register.register_menu(userList);
+    			userList.addUser(u);
+    		}
+    		else if (eleccionIngresar==2)
+    		{
+    			Login.login_menu(coleccionPj, coleccionCustom, userList, u, mfile, archivocustom, archivousuario);
+    		}
+    		else
+    		{
+    			System.out.println("Opcion incorrecta.");
+    		}
+    	
+    		System.out.println("Desea continuar? [Si=0] [No=1]");
+    		eleccionWhile = scanner.nextInt();
+    }
     	
     	
     	

@@ -19,8 +19,6 @@ public class Login {
 
         System.out.println("Login:");
 
-        db.list();
-
         while (aux == null) {
 
             System.out.println("Ingrese nombre de usuario: ");
@@ -35,10 +33,10 @@ public class Login {
 
                 if (aux.getUser_isAdmin() == true) {
                     Menu.menu_admin(misPj,misCustom,db,aux,fpj,fcustom,fuser);
-                    System.out.println("1");
+                
                 } else {
-                    ///menu user
-                    System.out.println("2");
+                    Menu.menu_user(misPj, misCustom, aux, fcustom);
+            
                 }
             }
             else {
