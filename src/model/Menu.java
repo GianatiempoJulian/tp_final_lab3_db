@@ -52,7 +52,7 @@ public class Menu {
         SaveRead.writeHashMap(db.getUserList(), fuser);
     }
 
-    public static CollectionPj menuCharacter_admin(CollectionPj pj) ///Menu con funciones para personajes originales de la serie.
+    public static CollectionPj menuCharacter_admin(CollectionPj<Character> pj) ///Menu con funciones para personajes originales de la serie.
     {
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -98,7 +98,7 @@ public class Menu {
                             System.out.println("Ingrese planeta del personaje: ");
                             planeta = scanner.next();
 
-                            System.out.println("Ingrese su estado: ");
+                            System.out.println("Ingrese su estado: [true = vivo/false = muerto]");
                             isAlive = scanner.nextBoolean();
 
                             System.out.println("Ingrese nivel maximo alcanzado: ");
@@ -124,7 +124,7 @@ public class Menu {
                             System.out.println("Ingrese planeta del personaje: ");
                             planeta = scanner.next();
 
-                            System.out.println("Ingrese su estado: ");
+                            System.out.println("Ingrese su estado: [true = vivo/false = muerto] ");
                             isAlive = scanner.nextBoolean();
 
                             System.out.println("Es luchador [true/false]: ");
@@ -149,7 +149,7 @@ public class Menu {
                             System.out.println("Ingrese tipo: ");
                             namekType = scanner.next();
 
-                            System.out.println("Ingrese si esta fusionado [true/false]");
+                            System.out.println("Ingrese si esta fusionado [true = vivo/false = muerto]");
                             isFusion = scanner.nextBoolean();
 
                             pj.addElement(new Namekian(nombre,ki,isAlive,planeta,namekType,isFusion));
@@ -165,7 +165,7 @@ public class Menu {
                             System.out.println("Ingrese planeta del personaje: ");
                             planeta = scanner.next();
 
-                            System.out.println("Ingrese su estado: ");
+                            System.out.println("Ingrese su estado: [true = vivo/false = muerto]");
                             isAlive = scanner.nextBoolean();
 
                             System.out.println("Ingrese nivel maximo alcanzado: ");
@@ -187,7 +187,7 @@ public class Menu {
                             System.out.println("Ingrese planeta del personaje: ");
                             planeta = scanner.next();
 
-                            System.out.println("Ingrese su estado: ");
+                            System.out.println("Ingrese su estado: [true = vivo/false = muerto]");
                             isAlive = scanner.nextBoolean();
 
                             System.out.println("Ingrese nombre de su creador: ");
@@ -217,11 +217,11 @@ public class Menu {
                     nombre = scanner.next();
                     aux = (Character) pj.searchElement(nombre);
                     if (aux!=null)
-                        ///menu modificar
                      menuModify_admin(aux);
                     else
                         System.out.println("Personaje no encontrado.");
                     break;
+                    
                 case 4:
                     System.out.println("Buscar");
                     System.out.println("Ingrese nombre del personaje a buscar: ");
@@ -433,22 +433,22 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Nombre actual: " + c.getChar_name() + "de" + c.getChar_name());
+                    System.out.println("Nombre actual: " + c.getChar_name() + " de " + c.getChar_name());
                     System.out.println("Ingrese nombre nuevo: ");
                     name = scanner.next();
                     c.setChar_name(name);
                     break;
 
                 case 2:
-                    System.out.println("Ki actual" + c.getChar_ki() + "de" + c.getChar_name());
+                    System.out.println("Ki actual: " + c.getChar_ki() + " de " + c.getChar_name());
                     System.out.println("Ingrese ki nuevo: ");
                     ki = scanner.nextDouble();
                     c.setChar_ki(ki);
                     break;
 
                 case 3:
-                    System.out.println("Estado actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
-                    System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
+                    System.out.println("Estado actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
+                    System.out.println("\n�Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) ///Acá no hay tanta libertad, solo es true o false. Si es true, se pasa auto. a false, y viceversa.
                     {
@@ -461,21 +461,21 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Planeta actual" + c.getChar_planet() + "de" + c.getChar_name());
+                    System.out.println("Planeta actual: " + c.getChar_planet() + " de " + c.getChar_name());
                     System.out.println("Ingrese planeta nuevo: ");
                     planet = scanner.next();
                     c.setChar_planet(planet);
                     break;
 
                 case 5:
-                    System.out.println("Nivel maximo actual" + c.getSai_level() + "de" + c.getChar_name());
+                    System.out.println("Nivel maximo actual: " + c.getSai_level() + " de " + c.getChar_name());
                     System.out.println("Ingrese nivel maximo nuevo: ");
                     maxLevelSai = scanner.nextInt();
                     c.setSai_level(maxLevelSai);
                     break;
 
                 case 6:
-                    System.out.println("Sangre actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsPureBlood());
+                    System.out.println("Sangre actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsPureBlood());
                     System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) {
@@ -488,8 +488,8 @@ public class Menu {
                     break;
 
                 case 7:
-                    System.out.println("Tiene cola " + c.getChar_name() + "?: " + c.boolean_ToStringYesorNo(c.getSai_haveTail()));
-                    System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
+                    System.out.println("Tiene " + c.getChar_name() + " cola?: " + c.boolean_ToStringYesorNo(c.getSai_haveTail()));
+                    System.out.println("\n�Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) {
                         if (c.getSai_haveTail()) {
@@ -526,22 +526,22 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Nombre actual: " + c.getChar_name() + "de" + c.getChar_name());
+                    System.out.println("Nombre actual: " + c.getChar_name() + " de " + c.getChar_name());
                     System.out.println("Ingrese nombre nuevo: ");
                     name = scanner.next();
                     c.setChar_name(name);
                     break;
 
                 case 2:
-                    System.out.println("Ki actual" + c.getChar_ki() + "de" + c.getChar_name());
+                    System.out.println("Ki actual " + c.getChar_ki() + " de " + c.getChar_name());
                     System.out.println("Ingrese ki nuevo: ");
                     ki = scanner.nextDouble();
                     c.setChar_ki(ki);
                     break;
 
                 case 3:
-                    System.out.println("Estado actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
-                    System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
+                    System.out.println("Estado actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
+                    System.out.println("\n�Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) ///Acá no hay tanta libertad, solo es true o false. Si es true, se pasa auto. a false, y viceversa.
                     {
@@ -554,7 +554,7 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Planeta actual" + c.getChar_planet() + "de" + c.getChar_name());
+                    System.out.println("Planeta actual :" + c.getChar_planet() + " de " + c.getChar_name());
                     System.out.println("Ingrese planeta nuevo: ");
                     planet = scanner.next();
                     c.setChar_planet(planet);
@@ -600,21 +600,21 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Nombre actual: " + c.getChar_name() + "de" + c.getChar_name());
+                    System.out.println("Nombre actual: " + c.getChar_name() + " de " + c.getChar_name());
                     System.out.println("Ingrese nombre nuevo: ");
                     name = scanner.next();
                     c.setChar_name(name);
                     break;
 
                 case 2:
-                    System.out.println("Ki actual" + c.getChar_ki() + "de" + c.getChar_name());
+                    System.out.println("Ki actual: " + c.getChar_ki() + " de " + c.getChar_name());
                     System.out.println("Ingrese ki nuevo: ");
                     ki = scanner.nextDouble();
                     c.setChar_ki(ki);
                     break;
 
                 case 3:
-                    System.out.println("Estado actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
+                    System.out.println("Estado actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
                     System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) ///Acá no hay tanta libertad, solo es true o false. Si es true, se pasa auto. a false, y viceversa.
@@ -628,14 +628,14 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Planeta actual" + c.getChar_planet() + "de" + c.getChar_name());
+                    System.out.println("Planeta actual: " + c.getChar_planet() + " de " + c.getChar_name());
                     System.out.println("Ingrese planeta nuevo: ");
                     planet = scanner.next();
                     c.setChar_planet(planet);
                     break;
 
                 case 5:
-                    System.out.println("Clase actual: " + c.getNam_type() + "de" + c.getChar_name());
+                    System.out.println("Clase actual: " + c.getNam_type() + " de " + c.getChar_name());
                     System.out.println("Ingrese clase nueva: ");
                     namekClass = scanner.next();
                     c.setNam_type(namekClass);
@@ -681,21 +681,21 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Nombre actual: " + c.getChar_name() + "de" + c.getChar_name());
+                    System.out.println("Nombre actual: " + c.getChar_name() + " de " + c.getChar_name());
                     System.out.println("Ingrese nombre nuevo: ");
                     name = scanner.next();
                     c.setChar_name(name);
                     break;
 
                 case 2:
-                    System.out.println("Ki actual" + c.getChar_ki() + "de" + c.getChar_name());
+                    System.out.println("Ki actual: " + c.getChar_ki() + " de " + c.getChar_name());
                     System.out.println("Ingrese ki nuevo: ");
                     ki = scanner.nextDouble();
                     c.setChar_ki(ki);
                     break;
 
                 case 3:
-                    System.out.println("Estado actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
+                    System.out.println("Estado actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
                     System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) ///Acá no hay tanta libertad, solo es true o false. Si es true, se pasa auto. a false, y viceversa.
@@ -709,14 +709,14 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Planeta actual" + c.getChar_planet() + "de" + c.getChar_name());
+                    System.out.println("Planeta actual: " + c.getChar_planet() + " de " + c.getChar_name());
                     System.out.println("Ingrese planeta nuevo: ");
                     planet = scanner.next();
                     c.setChar_planet(planet);
                     break;
 
                 case 5:
-                    System.out.println("Nivel maximo actual" + c.getDem_numberTransformation() + "de" + c.getChar_name());
+                    System.out.println("Nivel maximo actual: " + c.getDem_numberTransformation() + " de " + c.getChar_name());
                     System.out.println("Ingrese nivel maximo nuevo: ");
                     maxLevel = scanner.nextInt();
                     c.setDem_numberTransformation(maxLevel);
@@ -760,21 +760,21 @@ public class Menu {
             opcion = scanner.nextInt();
             switch (opcion) {
                 case 1:
-                    System.out.println("Nombre actual: " + c.getChar_name() + "de" + c.getChar_name());
+                    System.out.println("Nombre actual: " + c.getChar_name() + " de " + c.getChar_name());
                     System.out.println("Ingrese nombre nuevo: ");
                     name = scanner.next();
                     c.setChar_name(name);
                     break;
 
                 case 2:
-                    System.out.println("Ki actual" + c.getChar_ki() + "de" + c.getChar_name());
+                    System.out.println("Ki actual: " + c.getChar_ki() + " de " + c.getChar_name());
                     System.out.println("Ingrese ki nuevo: ");
                     ki = scanner.nextDouble();
                     c.setChar_ki(ki);
                     break;
 
                 case 3:
-                    System.out.println("Estado actual de" + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
+                    System.out.println("Estado actual de " + c.getChar_name() + ": " + c.boolean_ToStringIsAlive());
                     System.out.println("¿Quiere cambiarlo? [Si=0] [No=1]");
                     booleanEleccion = scanner.nextInt();
                     if (booleanEleccion == 0) ///Acá no hay tanta libertad, solo es true o false. Si es true, se pasa auto. a false, y viceversa.
@@ -788,14 +788,14 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Planeta actual" + c.getChar_planet() + "de" + c.getChar_name());
+                    System.out.println("Planeta actual: " + c.getChar_planet() + " de " + c.getChar_name());
                     System.out.println("Ingrese planeta nuevo: ");
                     planet = scanner.next();
                     c.setChar_planet(planet);
                     break;
 
                 case 5:
-                    System.out.println("Creador de" + c.getChar_name() + ": " + c.getAnd_creator());
+                    System.out.println("Creador de " + c.getChar_name() + ": " + c.getAnd_creator());
                     System.out.println("Ingrese creador nuevo: ");
                     creator = scanner.next();
                     c.setAnd_creator(creator);
@@ -907,7 +907,7 @@ public class Menu {
             {
                 case 1:
                     System.out.println("Mi personaje");
-                    System.out.println(u.toString());
+                    System.out.println(u.getMyCustom().toString());
                     break;
                 case 2:
                     System.out.println(u.getMyCustom().getChar_name() +" es mas fuerte que: ");
@@ -929,8 +929,15 @@ public class Menu {
 
                     break;
             }
+            if (u.getMyCustom() == null)
+            {
+            	eleccionWhile=1;
+            }
+            else
+            {
             System.out.println("Desea continuar? [Si = 0] [No = 1]");
             eleccionWhile = scanner.nextInt();
+            }
         }
     }
 
@@ -980,7 +987,7 @@ public class Menu {
                 System.out.println("Ingrese planeta del personaje: ");
                 planeta = scanner.next();
 
-                System.out.println("Ingrese su estado: ");
+                System.out.println("Ingrese su estado: [true = vivo/false = muerto]");
                 isAlive = scanner.nextBoolean();
 
                 while (!eyeAvailable) {
@@ -1025,14 +1032,14 @@ public class Menu {
 
                 while (!raceAvailable)
                 {
-                    System.out.println("Ingrese su raza : ");
+                    System.out.println("Ingrese su raza [1-5]: ");
                     race = scanner.nextInt();
                     raceAvailable = isAvaliableOption(race);
                 }
 
                 while (!genderAvailable)
                 {
-                    System.out.println("Ingrese su genero : ");
+                    System.out.println("Ingrese su genero [1-5]: ");
                     gender = scanner.nextInt();
                     genderAvailable= isAvaliableOption(gender);
                 }
@@ -1047,7 +1054,7 @@ public class Menu {
     {
         boolean answer = false;
 
-        if (eleccion > 1 && 5 > eleccion)
+        if (eleccion >= 1 && 5 >= eleccion)
         {
             answer = true;
         }
