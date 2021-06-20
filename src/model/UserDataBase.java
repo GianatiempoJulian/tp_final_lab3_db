@@ -93,6 +93,9 @@ public class UserDataBase implements IList {
         }
         return answer;
     }
+    public HashMap<Integer, User> getUserList() {
+		return userList;
+	}
 
     ///***FUNCIONES DE LA INTERFAZ***///
 

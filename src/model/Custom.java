@@ -7,24 +7,24 @@ public class Custom extends Character{
 	private int skin;
 	private int mouth;
 	private int nose;
-	private String race;
-	private String gender;
+	private int race;
+	private int gender;
 	
 	
 	public Custom () {
 		super();
-		eyes = 1;
-		hair = 1;
-		aura = 1;
-		skin = 1;
-		mouth = 1;
-		nose = 1;
-		race = "human";
-		gender = "null" ;
+		eyes = 0;
+		hair = 0;
+		aura = 0;
+		skin = 0;
+		mouth = 0;
+		nose = 0;
+		race = 0;
+		gender = 0 ;
 		
 	}
 
-	public Custom (String char_name, double char_ki, boolean char_isAlive, String char_planet,int eyes,int hair,int mouth,int nose,int skin,int aura,String gender,String race) {
+	public Custom (String char_name, double char_ki, boolean char_isAlive, String char_planet,int eyes,int hair,int mouth,int nose,int skin,int aura,int gender,int race) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.aura = aura ;
 		this.eyes = eyes;
@@ -33,6 +33,7 @@ public class Custom extends Character{
 		this.mouth = mouth;
 		this.nose = nose;
 		this.skin = skin;
+		this.race = race;
 
 	}
 
@@ -56,10 +57,10 @@ public class Custom extends Character{
 	public int getNose() {
 		return nose;
 	}
-	public String getRace() {
+	public int getRace() {
 		return race;
 	}
-	public String getGender() {
+	public int getGender() {
 		return gender;
 	}
 
@@ -89,11 +90,11 @@ public class Custom extends Character{
 		this.nose = nose;
 	}
 
-	public void setRace(String race) {
+	public void setRace(int race) {
 		this.race = race;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 

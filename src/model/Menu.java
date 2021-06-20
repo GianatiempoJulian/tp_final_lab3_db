@@ -1,9 +1,12 @@
 package model;
 
+import java.io.File;
 import java.text.CollationElementIterator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
+
+import files.SaveRead;
 
 public class Menu {
 
@@ -11,7 +14,7 @@ public class Menu {
 
     ///***ADMINISTRADOR***///
 
-    public static void menu_admin (CollectionPj misPj,CollectionPj misCustom,UserDataBase db,User u) //Menu de usuario administrador.
+    public static void menu_admin (CollectionPj misPj,CollectionPj misCustom,UserDataBase db,User u,File fpj,File fcustom,File fuser) //Menu de usuario administrador.
     {
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -28,21 +31,28 @@ public class Menu {
             switch (opcion)
             {
                 case 1:
-                    menuCharacter_admin(misPj);
+                   misPj = menuCharacter_admin(misPj);
                     break;
                 case 2:
-                    menuUser_admin(db);
+                   db= menuUser_admin(db);
                     break;
                 case 3:
-                    menuCustom_admin(misCustom,u);
+                   misCustom = menuCustom_admin(misCustom,u);
                     break;
             }
             System.out.println("Desea continuar? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        /// primero se borran , luego se vuelven a crear .
+        fpj.delete();
+        fcustom.delete();
+        fuser.delete();
+        SaveRead.writeHash(misPj.getCollectionHashSet(), fpj);
+        SaveRead.writeHash(misCustom.getCollectionHashSet(), fcustom);
+        SaveRead.writeHashMap(db.getUserList(), fuser);
     }
 
-    public static void menuCharacter_admin(CollectionPj pj) ///Menu con funciones para personajes originales de la serie.
+    public static CollectionPj menuCharacter_admin(CollectionPj pj) ///Menu con funciones para personajes originales de la serie.
     {
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -227,9 +237,12 @@ public class Menu {
             System.out.println("Desea continuar en Personajes? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        return pj;
+        
+        
     }
 
-    public static void menuUser_admin(UserDataBase db) ///Menu con funciones para usuarios registrados.
+    public static UserDataBase menuUser_admin(UserDataBase db) ///Menu con funciones para usuarios registrados.
     {
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -290,9 +303,10 @@ public class Menu {
             System.out.println("Desea continuar en Usuarios? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        return db;
     }
 
-    public static void menuCustom_admin(CollectionPj customPj,User u) ///Menu con funciones para personajes custom.
+    public static CollectionPj menuCustom_admin(CollectionPj customPj,User u) ///Menu con funciones para personajes custom.
     {
         ///variables para iteratuar
         scanner = new Scanner(System.in);
@@ -360,6 +374,7 @@ public class Menu {
             System.out.println("Desea continuar en Creador de Personajes? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        return customPj;
     }
 
     ///***MENUS DE MODIFICAR***///
@@ -795,7 +810,7 @@ public class Menu {
 
     ///***USUARIO NORMAL***///
 
-    public static void menu_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu de usuario comun.
+    public static void menu_user (CollectionPj db,CollectionPj dbCustom,User u,File fcustom) ///Menu de usuario comun.
     {
         scanner = new Scanner(System.in);
         int opcion = 0;
@@ -814,13 +829,16 @@ public class Menu {
                     menuCharacter_user(db);
                     break;
                 case 2:
-                    menuCustom_user(db,dbCustom,u);
+                   dbCustom = menuCustom_user(db,dbCustom,u);
                     break;
 
             }
             System.out.println("Desea continuar? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        fcustom.delete();
+        SaveRead.writeHash(dbCustom.getCollectionHashSet(), fcustom);
+        
     }
 
     public static void menuCharacter_user(CollectionPj db) ///Menu con funciones para personajes originales de la serie.
@@ -861,7 +879,7 @@ public class Menu {
         }
     }
 
-    public static void menuCustom_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu con funciones para personajes custom.
+    public static CollectionPj<Custom> menuCustom_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu con funciones para personajes custom.
     {
         Custom aux = null;
         aux = u.getMyCustom();
@@ -872,6 +890,7 @@ public class Menu {
         }
 
         menuCustomCreated_user(db,dbCustom,u);
+		return dbCustom;
     }
 
     public static void menuCustomCreated_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu con funciones para custom ya creado.
@@ -932,8 +951,8 @@ public class Menu {
         int hair= 0;
         int skinColor= 0;
         int aura= 0;
-        String race = null;
-        String gender = null;
+        int race = 0;
+        int gender = 0;
 
         ///para comprobar si es 1-5.
         boolean eyeAvailable = false;
@@ -1007,14 +1026,14 @@ public class Menu {
                 while (!raceAvailable)
                 {
                     System.out.println("Ingrese su raza : ");
-                    race = scanner.next();
+                    race = scanner.nextInt();
                     raceAvailable = isAvaliableOption(race);
                 }
 
                 while (!genderAvailable)
                 {
                     System.out.println("Ingrese su genero : ");
-                    gender = scanner.next();
+                    gender = scanner.nextInt();
                     genderAvailable= isAvaliableOption(gender);
                 }
 
