@@ -24,7 +24,14 @@ public class CollectionPj<T> {
 		return collectionHashSet.contains(element);
 	}
 
-	public String  show() {
+	public boolean remove(T element)
+	{
+		return collectionHashSet.remove(element);
+
+	}
+
+	public String  show() ///Muestra a todos los personajes de la coleccion
+	{
 		Iterator<T> itrIterator = collectionHashSet.iterator();
 		String msg = "";
 		while (itrIterator.hasNext()) {
@@ -34,7 +41,8 @@ public class CollectionPj<T> {
 		return msg;
 	}
 	
-	public T searchElement(String name) {
+	public T searchElement(String name) ///Busca por nombre.
+	{
 		Iterator <T> itrIterator = collectionHashSet.iterator();
 		T elementAux = null;
 		while(itrIterator.hasNext())
@@ -50,7 +58,8 @@ public class CollectionPj<T> {
 	}
 	//Se puede implementar una excepcion en este metodo
 	
-	public String showForPlanet(String planet) {
+	public String showForPlanet(String planet) ///Muestra a todos los miembros del planeta enviado
+	{
 		Iterator <T> itrIterator = collectionHashSet.iterator();
 		Character element1 = null;
 		String msg = "";
@@ -66,12 +75,23 @@ public class CollectionPj<T> {
 		return msg;
 	}
 
-	public boolean remove(T element) {
-		return collectionHashSet.remove(element);
-
-	}
 	public HashSet<T> getCollectionHashSet() {
 		return collectionHashSet;
 	}
 
+	public String strongerThan (T u) ///Funcion que devuelve un string con los personajes que son superados en poder por el enviado.
+	{
+		String msg = "";
+		int i = 0;
+		Iterator <T> itrIterator = collectionHashSet.iterator();
+
+		while(itrIterator.hasNext()){
+			T element1 = itrIterator.next();
+			if(((Character) u).getChar_ki() > ((Character) element1).getChar_ki())
+			{
+				msg = msg.concat("\n"+element1.toString());
+			}
+		}
+		return msg;
+	}
 }

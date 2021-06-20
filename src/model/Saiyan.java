@@ -46,14 +46,31 @@ public class Saiyan extends Character implements ISaiyanAttacks{
         this.sai_level = sai_level;
     }
 
+    public void setSai_pureBlood(boolean sai_pureBlood) {
+        this.sai_pureBlood = sai_pureBlood;
+    }
+
     public void setSai_haveTail(boolean sai_haveTail) {
         this.sai_haveTail = sai_haveTail;
     }
 
-    @Override
-    public String toString (){
-        return super.toString()+" Nivel SSJ Max: " +sai_level+ " Sangre Pura: " +boolean_ToString()+ " Tiene cola: "+boolean_ToString();
+    ///***BOOLEAN A TEXTO***///
+
+    public String boolean_ToStringIsPureBlood(){
+
+        String answer;
+
+        if (sai_pureBlood)
+        {
+            answer = "Pura";
+        }
+        else {
+            answer = "Mezcla";
+        }
+        return answer;
     }
+
+    ///***FUNCIONES DE LA INTERFAZ***///
 
     @Override
 	public int kamehameha() {
@@ -79,6 +96,11 @@ public class Saiyan extends Character implements ISaiyanAttacks{
 		return 100000;
 	}
 
+	///***METODOS***///
+    @Override
+    public String toString (){
+        return super.toString()+" Nivel SSJ Max: " +sai_level+ " Sangre Pura: " +boolean_ToStringIsPureBlood()+ " Tiene cola: "+boolean_ToStringYesorNo(getSai_haveTail());
+    }
 
 
 }

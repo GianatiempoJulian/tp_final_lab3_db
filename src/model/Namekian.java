@@ -13,20 +13,21 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		nam_type = "comun";
 		nam_fusion =false;
 	}
+
 	public Namekian(String char_name, double char_ki, boolean char_isAlive, String char_planet, String nam_type, boolean nam_fusion) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.nam_fusion = nam_fusion;
 		this.nam_type = nam_type;
 		
 	}
-	
-	
+
 	///***GETTERS***///
 	
 	public String getNam_type() {
 		return nam_type;
 	}
-	public boolean isNam_fusion() {
+
+	public boolean get_isfusion() {
 		return nam_fusion;
 	}
 	
@@ -35,9 +36,13 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 	public void setNam_fusion(boolean nam_fusion) {
 		this.nam_fusion = nam_fusion;
 	}
-	
-	///***METHODS***///
-	
+
+	public void setNam_type(String nam_type) {
+		this.nam_type = nam_type;
+	}
+
+	///***FUNCIONES DE LA INTERFAZ***///
+
 	@Override
 	public int hit_basic() {
 		int retorno = 100;
@@ -55,43 +60,36 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		}
 		return retorno;
 	}
-	
-	public String nam_boolean_ToString() {
-		 String answer;
 
-	        if (nam_fusion)
-	        {
-	            answer = "Si";
-	        }
-	        else {
-	            answer = "No";
-	        }
-	        return answer;
-	}
-	@Override
-	public String toString() {
-		return super.toString()+"  Raza : Namekiano Tipo :" + nam_type + ", Esta fusionado: " + nam_boolean_ToString() ;
-	}
 	@Override
 	public int makankosappo() {
 		System.out.println("There's nowhere to run, TAKE THIS!\n");
 		return 5000;
 	}
+
 	@Override
 	public int namek_fusion() {
 		System.out.println("I will win! No matter who my opponent is, I will never lose! ... I have finally obtained maximum power!\n");
 		return 10000;
 	}
+
 	@Override
 	public int healing() {
 		System.out.println("Don't worry I can regenerate my body..\n");
 		return -100;
 	}
+
 	@Override
 	public int hellzone_granade() {
 		System.out.println("HELLZONE GRENADE!!\n");
 		return 7000;
 	}
-	
+
+	///***METODOS***///
+
+	@Override
+	public String toString() {
+		return super.toString()+"  Raza : Namekiano Tipo :" + nam_type + ", Esta fusionado: " + boolean_ToStringYesorNo(get_isfusion()) ;
+	}
 	
 }

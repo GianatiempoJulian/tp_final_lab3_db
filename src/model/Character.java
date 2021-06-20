@@ -61,7 +61,7 @@ public abstract class Character implements Serializable  {
         this.char_planet = char_planet;
     }
 
-    ///***METHODS***///
+    ///***METODOS***///
 
     public int hit_basic() {
         return 100;
@@ -71,9 +71,15 @@ public abstract class Character implements Serializable  {
         return 200;
     }
 
-    ///Pasamos a texto lo que nos manden del booleano, para representar bien su estado.
+    @Override
+    public String toString(){
+        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToStringIsAlive()+ " Planeta Nacimiento: " + char_planet + " Ataque: " +hit_basic()+ " Ataque especial :" + hit_ki();
+    }
 
-    public String boolean_ToString(){
+    ///***BOOLEAN A TEXTO***///
+
+    public String boolean_ToStringIsAlive() ///Cambia los valores de boolean a texto, en este caso para ver el estado del personaje.
+    {
 
         String answer;
 
@@ -87,10 +93,22 @@ public abstract class Character implements Serializable  {
         return answer;
     }
 
-    @Override
-    public String toString(){
-        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToString()+ " Planeta Nacimiento: " + char_planet + " Ataque: " +hit_basic()+ " Ataque especial :" + hit_ki();
+    public String boolean_ToStringYesorNo(boolean b) ///Cambia los valores de boolean a texto, en este caso para booleans que necesiten un si o no.
+    {
+
+        String answer;
+
+        if (b)
+        {
+            answer = "Si";
+        }
+        else {
+            answer = "No";
+        }
+        return answer;
     }
+
+
 
 
 }

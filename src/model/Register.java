@@ -6,7 +6,8 @@ public class Register {
 
     static Scanner scanner;
 
-    public static User register_menu(UserDataBase db) {
+    public static User register_menu(UserDataBase db) ///Menu para que los nuevos usuarios se registren en el sistema.
+    {
 
         scanner = new Scanner(System.in);
         int opcion = 0;

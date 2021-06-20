@@ -13,8 +13,10 @@ public class UserDataBase implements IList {
         userList = new HashMap<>();
     }
 
+    ///***METODOS***///
 
-    public User getFullUser(String username,String password) {
+    public User getFullUser(String username,String password) ///Funcion para retornar el usuario cuando sus datos sean los correctos, tanto username como contraseña.
+    {
 
         User answer = null;
 
@@ -33,7 +35,8 @@ public class UserDataBase implements IList {
         return answer;
     }
 
-    public User getFullUserWithUsername(String username) { //retorna el usuario solo poniendo el username
+    public User getFullUserWithUsername(String username) //Igual que la anterior, pero retorna el usuario solo poniendo el username
+    {
 
         User answer = null;
 
@@ -53,6 +56,45 @@ public class UserDataBase implements IList {
         return answer;
     }
 
+    public boolean mail_Available(String mail) ///Funcion para comprobar que el mail puesto en el registro este disponible.
+    {
+        boolean answer = true;
+
+        Iterator it= userList.entrySet().iterator();
+
+        while (it.hasNext())
+        {
+            Map.Entry me =(Map.Entry) it.next();
+
+            if (((User) me.getValue()).getUser_mail().equals(mail))
+            {
+                answer = false;
+            }
+
+        }
+        return answer;
+    }
+
+    public boolean username_Available(String username) ///Funcion para comprobar que el username puesto en el registro este disponible.
+    {
+        boolean answer = true;
+
+        Iterator it= userList.entrySet().iterator();
+
+        while (it.hasNext())
+        {
+            Map.Entry me =(Map.Entry) it.next();
+
+            if (((User) me.getValue()).getUser_username().equals(username))
+            {
+                answer = false;
+            }
+
+        }
+        return answer;
+    }
+
+    ///***FUNCIONES DE LA INTERFAZ***///
 
     @Override
     public void addUser(User us) {
@@ -82,42 +124,8 @@ public class UserDataBase implements IList {
         return userList.get(us.getUser_id());
     }
 
-    public boolean mail_Available(String mail)
-    {
-        boolean answer = true;
 
-        Iterator it= userList.entrySet().iterator();
 
-        while (it.hasNext())
-        {
-            Map.Entry me =(Map.Entry) it.next();
 
-            if (((User) me.getValue()).getUser_mail().equals(mail))
-            {
-                answer = false;
-            }
-
-        }
-        return answer;
-    }
-
-    public boolean username_Available(String username)
-    {
-        boolean answer = true;
-
-        Iterator it= userList.entrySet().iterator();
-
-        while (it.hasNext())
-        {
-            Map.Entry me =(Map.Entry) it.next();
-
-            if (((User) me.getValue()).getUser_username().equals(username))
-            {
-                answer = false;
-            }
-
-        }
-        return answer;
-    }
 
 }
