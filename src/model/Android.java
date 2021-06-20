@@ -21,24 +21,26 @@ public class Android extends Character implements IAndroidAttacks {
 	public String getAnd_creator() {
 		return and_creator;
 	}
-	
-	///***METHODS***///
+
+	///***SETTERS***///
+
+	public void setAnd_creator(String and_creator) {
+		this.and_creator = and_creator;
+	}
+
+
+	///***FUNCIONES DE LA INTERFAZ***///
 	
 	@Override
 	public int hit_basic() {
 		
 		return super.hit_basic()*3;
 	}
+
 	@Override
 	public double hit_ki() {
 		
 		return super.hit_ki()*3;
-	}
-	
-	@Override
-	public String toString() {
-		
-		return super.toString()+" Raza: Androide"+ " Creador : "+and_creator;
 	}
 
 	@Override
@@ -63,5 +65,13 @@ public class Android extends Character implements IAndroidAttacks {
 	public int absorb_power() {
 		System.out.println("Let me ABSORB YOU!!");
 		return 150;
+	}
+
+	///***METODOS***///
+
+	@Override
+	public String toString() {
+
+		return super.toString()+" Raza: Androide"+ " Creador : "+and_creator;
 	}
 }

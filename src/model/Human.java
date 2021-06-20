@@ -6,10 +6,11 @@ public class Human extends Character implements IHumanAttacks{
 
 	private boolean hum_fighter;
 	
-	 public Human() {
+	public Human() {
 		super();
 		hum_fighter = false;
 	}
+
 	public Human(String char_name, double char_ki, boolean char_isAlive, String char_planet, boolean hum_fighter) {
 		super(char_name, char_ki, char_isAlive, char_planet);
 		this.hum_fighter = hum_fighter;
@@ -17,11 +18,19 @@ public class Human extends Character implements IHumanAttacks{
 	}
 	
 	///***GETTERS***///
-	public boolean isHum_fighter() {
+
+	public boolean get_isFighter() {
 		return hum_fighter;
 	}
-	
-	///***METHODS***///
+
+	///***SETTERS***///
+
+	public void set_isFighter(boolean hum_fighter) {
+		this.hum_fighter = hum_fighter;
+	}
+
+	///***FUNCIONES DE LA INTERFAZ***///
+
 	@Override
 	public int hit_basic() {
 		int retorno = 100;
@@ -52,23 +61,29 @@ public class Human extends Character implements IHumanAttacks{
 	        }
 	        return answer;
 	}
-	@Override
-	public String toString() {
-		return super.toString()+"  Raza : Humano Guerrero :" +hum_boolean_ToString() ;
-	}
+
 	@Override
 	public int solar_flare() {
 		System.out.println("Taiyōken!!\n");
 		return 100;
 	}
+
 	@Override
 	public int kaio_ken() {
 		System.out.println("Kaiō Keeen!!\n");
 		return 2;
 	}
+
 	@Override
 	public int kienzan() {
 		System.out.println("Kien ZAN!!\n");
 		return 1000;
+	}
+
+	///***METODOS***///
+
+	@Override
+	public String toString() {
+		return super.toString()+"  Raza : Humano Guerrero :" +hum_boolean_ToString() ;
 	}
 }

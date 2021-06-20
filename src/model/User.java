@@ -22,6 +22,8 @@ public class User {
         this.myCustom = null;
     }
 
+    ///***GETTERS***///
+
     public int getUser_id() {
         return user_id;
     }
@@ -40,6 +42,32 @@ public class User {
 
     public boolean getUser_isAdmin() {
         return isAdmin;
+    }
+
+    public Custom getMyCustom() {
+        return myCustom;
+    }
+
+    ///***SETTERS***///
+
+    public void setUser_mail(String user_mail) {
+        this.user_mail = user_mail;
+    }
+
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
+    }
+
+    public void setUser_password(String user_password) {
+        this.user_password = user_password;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public void setMyCustom(Custom myCustom) {
+        this.myCustom = myCustom;
     }
 
     @Override
