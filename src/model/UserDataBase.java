@@ -1,16 +1,17 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 import interfaz.IList;
 
-public class UserDataBase implements IList {
+public class UserDataBase implements IList,Serializable {
     private HashMap<Integer,User> userList;
 
     public UserDataBase (){
-        userList = new HashMap<>();
+        userList = new HashMap<Integer,User>();
     }
 
     ///***METODOS***///

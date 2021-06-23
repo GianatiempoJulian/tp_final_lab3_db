@@ -55,34 +55,60 @@ public class Demon extends Character implements IDemonAttacks{
 	}
 	
 	@Override
-	public int finger_beam() {
-		System.out.println("It's time for you to give up\n");
-		return 30000;
+	public String finger_beam() {
+		String msg = "Disparo de dedo: ";
+		return msg.concat("5000");
 	}
 
 	@Override
-	public int supernova() {
-		System.out.println("I'm going to end this planet\n");
-		return 75000;
+	public String supernova() {
+		String msg = "Supernova: ";
+		return msg.concat("30000");
 	}
 
 	@Override
-	public int chocolate_beam() {
-		System.out.println("Chocolates all of you\n");
-		return 90000;
+	public String chocolate_beam() {
+		String msg = "Rayo de chocolate: ";
+		return "8000";
 	}
 
 	@Override
-	public int mortal_ball() {
-		System.out.println("This is my DEATH BALL\n");
-		return 80000;
+	public String mortal_ball() {
+		String msg = "Bola Mortal: ";
+		return msg.concat("25000");
 	}
 
 	///***METODOS***///
 
 	@Override
 	public String toString() {
-		return super.toString()+ " Raza : Demonio  Numero de transformaciones: " + dem_numberTransformation + " Absorve :" + dem_absorb;
+		return super.toString()+"| Raza: Demonio" + " | Numero de transformaciones: " + dem_numberTransformation + " | Absorbe :" + boolean_ToStringYesorNo(dem_absorb) + " | Ataque del dia: " + ataqueAlAzar();
+	}
+	
+	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	{
+		String msg="";
+		int eleccion=(int)(Math.random() * 4 + 1);
+		switch (eleccion)
+		{
+			case 1:
+				msg = mortal_ball();
+				break;
+				
+			case 2:
+				msg = chocolate_beam();
+				break;
+			
+			case 3:
+				msg = supernova();
+				break;
+				
+			case 4:
+				msg = finger_beam();
+				break;
+		}
+		
+		return msg;
 	}
 	
 }

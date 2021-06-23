@@ -2,9 +2,9 @@ package interfaz;
 
 public interface IDemonAttacks {
 
-    public int finger_beam();
-    public int supernova();
-    public int chocolate_beam();
-    public int mortal_ball();
+    public String finger_beam();
+    public String supernova();
+    public String chocolate_beam();
+    public String mortal_ball();
 
 }

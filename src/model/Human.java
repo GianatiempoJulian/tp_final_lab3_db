@@ -63,27 +63,51 @@ public class Human extends Character implements IHumanAttacks{
 	}
 
 	@Override
-	public int solar_flare() {
-		System.out.println("Taiyōken!!\n");
-		return 100;
+	public String solar_flare() {
+		String msg = "Taiyoken: ";
+		return msg.concat("Enemigo cegado por 10 Segundos");
 	}
 
 	@Override
-	public int kaio_ken() {
-		System.out.println("Kaiō Keeen!!\n");
-		return 2;
+	public String kaio_ken() {
+		String msg="Kaio-Ken: ";
+		return msg.concat(" Poder multiplicado X2.: "+getChar_ki()*2);
 	}
 
 	@Override
-	public int kienzan() {
-		System.out.println("Kien ZAN!!\n");
-		return 1000;
+	public String kienzan() {
+		String msg="Kien-Zan: ";
+		return msg.concat("6000");
 	}
 
 	///***METODOS***///
 
 	@Override
 	public String toString() {
-		return super.toString()+"  Raza : Humano Guerrero :" +hum_boolean_ToString() ;
+		return super.toString()+"| Raza: Humano" + " | Es Guerrero? :" + boolean_ToStringYesorNo(get_isFighter())+ " | Ataque del dia: " + ataqueAlAzar() ;
+	}
+	
+	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	{
+		String msg="";
+		int eleccion=(int)(Math.random() * 3 + 1);
+		switch (eleccion)
+		{
+			case 1:
+				msg = solar_flare();
+				break;
+				
+			case 2:
+				msg = kaio_ken();
+				break;
+			
+			case 3:
+				msg = kienzan();
+				break;
+				
+		
+		}
+		
+		return msg;
 	}
 }

@@ -100,8 +100,8 @@ public class Custom extends Character{
 
 	@Override
 	public String toString() {
-		return super.toString()+ " ojos: " + eyes + ", pelo: " + hair + " aura: " + aura + " skin: " + skin + " mouth: " + mouth
-				+ " nose: " + nose + " race: " + race + " gender: " + gender;
+		return super.toString()+ " | Ojos: " + eyes + " | Pelo: " + hair + " | Aura: " + aura + " | Piel: " + skin + " | Boca: " + mouth
+				+ " | Nariz: " + nose + " | Raza: " + race + " | Genero: " + gender;
 	}
 	
 	

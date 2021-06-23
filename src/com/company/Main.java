@@ -13,6 +13,7 @@ import model.Login;
 import model.Menu;
 import model.Namekian;
 import model.Register;
+import model.Saiyan;
 import model.User;
 import model.UserDataBase;
 
@@ -64,7 +65,7 @@ public class Main {
 //    	
 //    	Saiyan vegetta = new Saiyan("Vegetta",1000000000 , true , "Tierra", 2, true, true );
 //    	
-//    	Character goku = new Saiyan("Goku",2000000000 , true , "Tierra", 3, true, true );
+   	Character goku = new Saiyan("Goku",2000000000 , true , "Tierra", 3, true, true );
 //    	
 //    	Saiyan gohan = new Saiyan("Gohan",900000000 , true , "Tierra", 2, false, true );
 //    	
@@ -135,31 +136,33 @@ public class Main {
     	CollectionPj<Character> coleccionPj = new CollectionPj<Character>(); // se crean las colecciones donde van 
     	CollectionPj<Custom> coleccionCustom = new CollectionPj<Custom>();  //a estar guardados los datos para trabajar
     	UserDataBase userList = new UserDataBase();
-
+    	
+    	User n = new User ("n","b","n",true);
+    	SaveRead.writeHashMap(userList.getUserList(), archivousuario);
+    	
     	SaveRead.readHash2(mfile, coleccionPj); /// se guarda lo q esta en el archivo en las colecciones	
     	SaveRead.readHash2(archivocustom, coleccionCustom);
     	SaveRead.readHashMap(archivousuario, userList);
     	
     	User u = new User(); ///ver motivo ?¡
-    	System.out.println("coleccion pj");
+ 
     	SaveRead.readHash(mfile);
-//    	System.out.println("---------------");
-    	System.out.println("coleccion user");
-//    	System.out.println("---------------");
-    	SaveRead.readHashMap(archivousuario, userList);
+
+ 
     	
     	scanner = new Scanner(System.in);
     	int eleccionIngresar = 0;
     	int eleccionWhile = 0;
     	
     	
+    	
     	while (eleccionWhile == 0) 
     	{
     		
-    		
+    		System.out.println("\nBienvenido a DragonJava! Que desea hacer?\n");
     		System.out.println("Ingrese opcion:");
-    		System.out.println("1.Registrarse");	
-    		System.out.println("2.Ingresar");
+    		System.out.println("\n1.Registrarse");	
+    		System.out.println("\n2.Ingresar");
     		eleccionIngresar = scanner.nextInt();
     	
     	
@@ -181,7 +184,7 @@ public class Main {
     		eleccionWhile = scanner.nextInt();
     }
     	
-    	
+    	System.out.println("Fin del programa");
     	
     }
  
