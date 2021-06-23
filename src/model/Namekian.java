@@ -62,34 +62,61 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 	}
 
 	@Override
-	public int makankosappo() {
-		System.out.println("There's nowhere to run, TAKE THIS!\n");
-		return 5000;
+	public String makankosappo() {
+		String msg = "Makankosappo: ";
+		return msg.concat("5500");
 	}
 
 	@Override
-	public int namek_fusion() {
-		System.out.println("I will win! No matter who my opponent is, I will never lose! ... I have finally obtained maximum power!\n");
-		return 10000;
+	public String namek_fusion() {
+		String msg = "Fusion Namekiana: ";
+		return msg.concat("Poder incrementaria en 10000: " + getChar_ki()+10000);
 	}
 
 	@Override
-	public int healing() {
-		System.out.println("Don't worry I can regenerate my body..\n");
-		return -100;
+	public String healing() {
+		String msg = "Curacion Namekaina: ";
+		return msg.concat("Poder incrementaria en 1000: " + getChar_ki()+1000);
 	}
 
 	@Override
-	public int hellzone_granade() {
-		System.out.println("HELLZONE GRENADE!!\n");
-		return 7000;
+	public String hellzone_granade() {
+		String msg = "Granada infernal: ";
+		return msg.concat("8200");
 	}
 
 	///***METODOS***///
 
 	@Override
 	public String toString() {
-		return super.toString()+"  Raza : Namekiano Tipo :" + nam_type + ", Esta fusionado: " + boolean_ToStringYesorNo(get_isfusion()) ;
+		return super.toString()+"| Raza: Namekiano"+ " | Namekiano Tipo :" + nam_type + " | Esta fusionado: " + boolean_ToStringYesorNo(get_isfusion())+ " | Ataque del dia: " + ataqueAlAzar() ;
+	}
+	
+	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	{
+		String msg="";
+		int eleccion=(int)(Math.random() * 4 + 1);
+		switch (eleccion)
+		{
+			case 1:
+				msg = makankosappo();
+				break;
+				
+			case 2:
+				msg = namek_fusion();
+				break;
+			
+			case 3:
+				msg = healing();
+				break;
+			
+			case 4:
+				msg = hellzone_granade();
+				break;		
+		
+		}
+		
+		return msg;
 	}
 	
 }

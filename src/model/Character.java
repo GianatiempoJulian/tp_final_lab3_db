@@ -64,16 +64,16 @@ public abstract class Character implements Serializable  {
     ///***METODOS***///
 
     public int hit_basic() {
-        return 100;
+        return 400;
     }
 
     public double hit_ki() {
-        return 200;
+        return 800;
     }
 
     @Override
     public String toString(){
-        return "Nombre: " +char_name+ " Ki: " +char_ki+ " Estado: " +boolean_ToStringIsAlive()+ " Planeta Nacimiento: " + char_planet + " Ataque: " +hit_basic()+ " Ataque especial :" + hit_ki();
+        return "Nombre: " +char_name+ " | Ki: " +char_ki+ " | Estado: " +boolean_ToStringIsAlive()+ " | Planeta Nacimiento: " + char_planet + " | Ataque fisico: " +hit_basic()+ " | Ataque de ki :" + hit_ki();
     }
 
     ///***BOOLEAN A TEXTO***///

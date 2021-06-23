@@ -2,10 +2,10 @@ package interfaz;
 
 public interface ISaiyanAttacks {
 
-    public int kamehameha();
-    public int garlick_hoo();
-    public int ki_blast();
-    public int expansive_wave();
+    public String kamehameha();
+    public String garlick_hoo();
+    public String ki_blast();
+    public String expansive_wave();
 
 
 }

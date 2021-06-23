@@ -42,36 +42,66 @@ public class Android extends Character implements IAndroidAttacks {
 		
 		return super.hit_ki()*3;
 	}
+	
+	///***IAndroidAttacks***///
 
 	@Override
-	public int barrage() {
-		System.out.println("You can't take THIS\n!!");
-		return 10000;
+	public String barrage() {
+		String msg = "Barrera de Energia: ";
+		return msg.concat("10000");
 	}
 
 	@Override
-	public int infinity_bullet() {
-		System.out.println("This are my energy BLASTS!!");
-		return 3000;
+	public String infinity_bullet() {
+		String msg = "Bala Infinita: ";
+		return msg.concat("3000");
 	}
 
 	@Override
-	public int power_wave() {
-		System.out.println("Power WAVE!!");
-		return 11000;
+	public String power_wave() {
+		String msg = "Onda de Poder: ";
+		return msg.concat("6000");
 	}
 
 	@Override
-	public int absorb_power() {
-		System.out.println("Let me ABSORB YOU!!");
-		return 150;
+	public String absorb_power() {
+		String msg = "Absorber poder: ";
+		return msg.concat(" total absorbido: 1000: "+getChar_ki()+1000);
 	}
 
 	///***METODOS***///
+	
+
 
 	@Override
 	public String toString() {
 
-		return super.toString()+" Raza: Androide"+ " Creador : "+and_creator;
+		return super.toString()+" | Raza: Androide " + " | Creador : "+and_creator + " | Ataque del dia: " + ataqueAlAzar();
+	}
+	
+	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	{
+		String msg="";
+		int eleccion=(int)(Math.random() * 4 + 1);
+		switch (eleccion)
+		{
+			case 1:
+				msg = barrage();
+				break;
+				
+			case 2:
+				msg = infinity_bullet();
+				break;
+			
+			case 3:
+				msg = power_wave();
+				break;
+				
+			case 4:
+				msg = absorb_power();
+				break;
+		}
+		
+		return msg;
 	}
 }

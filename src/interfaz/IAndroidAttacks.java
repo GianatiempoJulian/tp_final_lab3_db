@@ -2,9 +2,9 @@ package interfaz;
 
 public interface IAndroidAttacks {
 
-    public int barrage();
-    public int infinity_bullet();
-    public int power_wave();
-    public int absorb_power();
+    public String barrage();
+    public String infinity_bullet();
+    public String power_wave();
+    public String absorb_power();
 
 }

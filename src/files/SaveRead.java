@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Properties;
 
 import model.CollectionPj;
 import model.User;
@@ -30,7 +31,7 @@ public class SaveRead {
 			}
 
 		} catch (IOException e) {
-			System.out.println("error en el archivo");
+			System.out.println("error en el archivo de escritura");
 
 		} finally {
 			try {
@@ -57,7 +58,7 @@ public class SaveRead {
 		}
 
 		catch (IOException ef) {
-			System.out.println("Error en el archivo");
+			System.out.println("Error en el archivo de lectura");
 		} catch (ClassNotFoundException er) {
 			System.out.println("No se encontro la clase");
 		} finally {
@@ -87,7 +88,7 @@ public class SaveRead {
 		}
 
 		catch (IOException ef) {
-			System.out.println("Error en el archivo ");
+			System.out.println("Error en el archivo de agregar elemento");
 			ef.printStackTrace();
 		} catch (ClassNotFoundException er) {
 			System.out.println("No se encontro la clase");
@@ -103,27 +104,33 @@ public class SaveRead {
 	}
 	
 	public static void readHashMap(File fuser,UserDataBase coleccion) {
+		System.out.println("1");
 		ObjectInputStream entrada3 = null;
 		try {
+			System.out.println("2");
 			boolean more = true;
 			entrada3 = new ObjectInputStream(new FileInputStream(fuser));
-
+			System.out.println("3");
 			while (more) {
+				System.out.println("4");
 				User element = (User) entrada3.readObject();
+				System.out.println("5");
 				coleccion.addUser(element);
+				System.out.println("6");
 			}
 
 		} catch (EOFException e) {
+			System.out.println("7");
 			System.out.println("Fin de lectura");
 		}
 
 		catch (IOException ef) {
-			System.out.println("Error en el archivo");
+			System.out.println("Error en el archivo de lectura del usuario");
 		} catch (ClassNotFoundException er) {
 			System.out.println("No se encontro la clase");
 		} finally {
 			try {
-
+				System.out.println("8");
 				entrada3.close();
 			} catch (IOException e2) {
 				e2.printStackTrace();
@@ -132,23 +139,33 @@ public class SaveRead {
 	}
 	public static void writeHashMap(HashMap<Integer,User> collection, File mf) {
 		ObjectOutputStream salida2 = null;
-		try {
-			salida2 = new ObjectOutputStream(new FileOutputStream(mf));
-
-			Iterator itrIterator = collection.entrySet().iterator();
-			while (itrIterator.hasNext()) {
-				Map.Entry me =(Map.Entry) itrIterator.next();
 		
-				salida2.writeObject(me);
-			}
 
+		try {
+			
+			
+			salida2 = new ObjectOutputStream(new FileOutputStream(mf));
+		
+			Iterator itrIterator = collection.entrySet().iterator();
+			
+			while (itrIterator.hasNext()) {
+			
+				Map.Entry me = (Map.Entry) itrIterator.next();
+				salida2.writeObject(me);
+			
+			}
+			
+			
 		} catch (IOException e) {
-			System.out.println("error en el archivo");
+			System.out.println("error en el archivo de escritura del mapa");
 
 		} finally {
+			
 			try {
+				
 				salida2.close();
 			} catch (IOException e2) {
+				
 				e2.printStackTrace();
 			}
 		}

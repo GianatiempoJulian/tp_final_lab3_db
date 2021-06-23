@@ -17,14 +17,14 @@ public class Login {
         User aux = null;
 
 
-        System.out.println("Login:");
+        System.out.println("\nLogin:");
 
         while (aux == null) {
 
-            System.out.println("Ingrese nombre de usuario: ");
+            System.out.println("\nIngrese nombre de usuario: ");
             put_username = scanner.next();
 
-            System.out.println("Ingrese contraseña:");
+            System.out.println("\nIngrese contraseña:");
             put_password = scanner.next();
 
             aux = db.getFullUser(put_username,put_password);
@@ -40,7 +40,7 @@ public class Login {
                 }
             }
             else {
-                System.out.println("Usuario o contraseña incorrecta.");
+                System.out.println("\nUsuario o contraseña incorrecta.");
             }
 
         }

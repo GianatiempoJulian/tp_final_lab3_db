@@ -73,34 +73,61 @@ public class Saiyan extends Character implements ISaiyanAttacks{
     ///***FUNCIONES DE LA INTERFAZ***///
 
     @Override
-	public int kamehameha() {
-		System.out.println("kaa.. mee. haa.. mee.. HAAA!!\n");
-		return 10000;
+	public String kamehameha() {
+		String msg = "Kamehameha: ";
+		return msg.concat("10000");
 	}
 
 	@Override
-	public int garlick_hoo() {
-		System.out.println("Will turn to the dust of the universe, GALICK HOO!!\n");
-		return 24000;
+	public String garlick_hoo() {
+		String msg = "Garlick Hoo: ";
+		return msg.concat("6000");
 	}
 
 	@Override
-	public int ki_blast() {
-		System.out.println("Take THIS!!\n");
-		return 3000;
+	public String ki_blast() {
+		String msg = "Bola de Ki: ";
+		return msg.concat("3000");
 	}
 
 	@Override
-	public int expansive_wave() {
-		System.out.println("You are a fool, I'm going to crush you and throw you into the wind, HAAAA!!\n");
-		return 100000;
+	public String expansive_wave() {
+		String msg = "Onda Expansiva: ";
+		return msg.concat("8000");
 	}
 
 	///***METODOS***///
     @Override
     public String toString (){
-        return super.toString()+" Nivel SSJ Max: " +sai_level+ " Sangre Pura: " +boolean_ToStringIsPureBlood()+ " Tiene cola: "+boolean_ToStringYesorNo(getSai_haveTail());
+        return super.toString()+" | Raza: Saiyan" + " | Nivel SSJ Max: " +sai_level+ "  | Sangre Pura: " +boolean_ToStringIsPureBlood()+ " | Tiene cola: "+boolean_ToStringYesorNo(getSai_haveTail())+ " | Ataque del dia: " + ataqueAlAzar();
     }
+    
+    public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	{
+		String msg="";
+		int eleccion=(int)(Math.random() * 4 + 1);
+		switch (eleccion)
+		{
+			case 1:
+				msg = kamehameha();
+				break;
+				
+			case 2:
+				msg = garlick_hoo();
+				break;
+			
+			case 3:
+				msg = ki_blast();
+				break;
+			
+			case 4:
+				msg = expansive_wave();
+				break;		
+		
+		}
+		
+		return msg;
+	}
 
 
 }
