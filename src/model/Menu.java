@@ -36,6 +36,7 @@ public class Menu {
 
         while (eleccion==0)
         {
+        	System.out.println("===================Administrador===================");
             System.out.println("\n1.Personajes");
             System.out.println("2.Usuarios");
             System.out.println("3.Creador de Personajes");
@@ -56,6 +57,8 @@ public class Menu {
             System.out.println("\nDesea continuar? [Si = 0] [No = 1]");
             eleccion = scanner.nextInt();
         }
+        System.out.println("USERLIST:");
+        System.out.println(db.getUserList());
         /// primero se borran , luego se vuelven a crear .
         fpj.delete();
         fcustom.delete();
@@ -86,7 +89,7 @@ public class Menu {
 
         while (eleccion==0)
         {
-            System.out.println("\nPersonajes");
+        	System.out.println("===================Personajes===================");
             System.out.println("\n1.Agregar");
             System.out.println("2.Eliminar");
             System.out.println("3.Modificar");
@@ -278,7 +281,7 @@ public class Menu {
 
         while (eleccion==0)
         {
-            System.out.println("\nUsuarios");
+            System.out.println("===================Usuarios===================");
             System.out.println("1.Agregar");
             System.out.println("2.Eliminar");
             System.out.println("3.Buscar");
@@ -367,7 +370,7 @@ public class Menu {
 
         while (eleccion==0)
         {
-            System.out.println("\nCreador de Personajes");
+        	System.out.println("===================Creador de Personaje===================");
             System.out.println("1.Agregar");
             System.out.println("2.Eliminar");
             System.out.println("3.Buscar");
@@ -896,6 +899,7 @@ public class Menu {
 
         while (eleccion==0)
         {
+        	System.out.println("===================Usuario===================");
             System.out.println("\n1.Personajes");
             System.out.println("2.Creador de Personajes");
 
@@ -932,7 +936,7 @@ public class Menu {
 
         while (eleccion==0)
         {
-            System.out.println("\nPersonajes");
+        	System.out.println("===================Personajes===================");
             System.out.println("1.Buscar");
             System.out.println("2.Mostrar por Planeta");
 
@@ -999,6 +1003,7 @@ public class Menu {
         int opcion,opcion2;
 
         while (eleccionWhile==0) {
+        	System.out.println("===================Creador de Personaje===================");
             System.out.println("\n1.Ver mi personaje");
             System.out.println("2.Mas fuerte que...");
             System.out.println("3.Eliminar");

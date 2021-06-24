@@ -31,7 +31,7 @@ public class Login {
         User aux = null;
 
 
-        System.out.println("\nLogin:");
+        System.out.println("\n===================Login===================");
 
         while (aux == null) {
 
