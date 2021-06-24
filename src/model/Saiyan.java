@@ -10,6 +10,8 @@ public class Saiyan extends Character implements ISaiyanAttacks{
     private boolean sai_pureBlood;
     private boolean sai_haveTail;
 
+  ///***============================CONSTRUCTORES============================***///
+    
     public Saiyan (){}
 
     public Saiyan (int sai_level,boolean sai_pureBlood,boolean sai_haveTail){
@@ -26,7 +28,7 @@ public class Saiyan extends Character implements ISaiyanAttacks{
         this.sai_haveTail = sai_haveTail;
     }
 
-    ///***GETTERS***///
+  ///***============================GETTERS============================***///
 
     public int getSai_level() {
         return sai_level;
@@ -40,7 +42,7 @@ public class Saiyan extends Character implements ISaiyanAttacks{
         return sai_haveTail;
     }
 
-    ///***SETTERS***///
+  ///***============================SETTERS============================***///
 
     public void setSai_level(int sai_level) {
         this.sai_level = sai_level;
@@ -54,7 +56,7 @@ public class Saiyan extends Character implements ISaiyanAttacks{
         this.sai_haveTail = sai_haveTail;
     }
 
-    ///***BOOLEAN A TEXTO***///
+  ///***============================BOOLEAN TO TEXTO============================***///
 
     public String boolean_ToStringIsPureBlood(){
 
@@ -70,37 +72,64 @@ public class Saiyan extends Character implements ISaiyanAttacks{
         return answer;
     }
 
-    ///***FUNCIONES DE LA INTERFAZ***///
+  ///***============================FUNCIONES DE LA INTERFAZ============================***///
 
+    /**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+    
     @Override
 	public String kamehameha() {
 		String msg = "Kamehameha: ";
 		return msg.concat("10000");
 	}
 
+    /**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+    
 	@Override
 	public String garlick_hoo() {
 		String msg = "Garlick Hoo: ";
 		return msg.concat("6000");
 	}
 
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String ki_blast() {
 		String msg = "Bola de Ki: ";
 		return msg.concat("3000");
 	}
-
+	
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String expansive_wave() {
 		String msg = "Onda Expansiva: ";
 		return msg.concat("8000");
 	}
 
-	///***METODOS***///
+	///***============================FUNCIONES============================***///
+	
     @Override
     public String toString (){
         return super.toString()+" | Raza: Saiyan" + " | Nivel SSJ Max: " +sai_level+ "  | Sangre Pura: " +boolean_ToStringIsPureBlood()+ " | Tiene cola: "+boolean_ToStringYesorNo(getSai_haveTail())+ " | Ataque del dia: " + ataqueAlAzar();
     }
+    
+    /**
+	 * 
+	 * Devuelve un ataque al azar para mostrar, mediante un random que genera un numero del 1 a total de ataques totales.
+	 * @return <b>el ataque que salió</b>
+	 */
     
     public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
 	{

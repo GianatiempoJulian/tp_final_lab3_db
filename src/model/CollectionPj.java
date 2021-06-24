@@ -8,10 +8,14 @@ public class CollectionPj<T> {
 
 	private HashSet<T> collectionHashSet;
 
+	///***============================CONSTRUCTORES============================***///
+	
 	public CollectionPj() {
 		collectionHashSet = new HashSet<T>();
 	}
 
+	///***============================FUNCIONES============================***///
+	
 	public void addElement(T element) {
 		collectionHashSet.add(element);
 	}
@@ -30,7 +34,12 @@ public class CollectionPj<T> {
 
 	}
 
-	public String  show() ///Muestra a todos los personajes de la coleccion
+	/**
+	 * Muestra a todos los personajes de la coleccion
+	 * @return <b>un String con todos los personajes.</b>
+	 */
+	
+	public String  show() 
 	{
 		Iterator<T> itrIterator = collectionHashSet.iterator();
 		String msg = "";
@@ -41,7 +50,12 @@ public class CollectionPj<T> {
 		return msg;
 	}
 	
-	public T searchElement(String name) ///Busca por nombre.
+	/**
+	 * 
+	 * @param name - String con el nombre buscado.
+	 * @return <b>un objecto generico "T" con el elemento encontrado en dicha coleccion.</b>
+	 */
+	public T searchElement(String name) 
 	{
 		Iterator <T> itrIterator = collectionHashSet.iterator();
 		T elementAux = null;
@@ -56,9 +70,14 @@ public class CollectionPj<T> {
 		
 		return elementAux;
 	}
-	//Se puede implementar una excepcion en este metodo
+
+	/**
+	 * 
+	 * @param planet - String con el nombre del planeta.
+	 * @return <b>un String con todos los personajes del planeta.</b>
+	 */
 	
-	public String showForPlanet(String planet) ///Muestra a todos los miembros del planeta enviado
+	public String showForPlanet(String planet) 
 	{
 		Iterator <T> itrIterator = collectionHashSet.iterator();
 		Character element1 = null;
@@ -79,7 +98,13 @@ public class CollectionPj<T> {
 		return collectionHashSet;
 	}
 
-	public String strongerThan (T u) ///Funcion que devuelve un string con los personajes que son superados en poder por el enviado.
+	/**
+	 * 
+	 * @param u - Personaje que deseamos comparar con el resto.
+	 * @return <b>un String con todos los personajes que son mas debiles que el enviado por parametro.</b>
+	 */
+	
+	public String strongerThan (T u) 
 	{
 		String msg = "";
 		int i = 0;

@@ -7,6 +7,8 @@ import interfaz.IAndroidAttacks;
 public class Android extends Character implements IAndroidAttacks {
 	private String and_creator ;
 	
+	///***============================CONSTRUCTORES============================***///
+	
 	public Android() {
 		super(); 
 		and_creator = "Red Ribbon";
@@ -17,19 +19,24 @@ public class Android extends Character implements IAndroidAttacks {
 		this.and_creator = and_creator;
 	}
 	
-	///***GETTERS***///
+	///***============================GETTERS============================***///
+	
 	public String getAnd_creator() {
 		return and_creator;
 	}
 
-	///***SETTERS***///
+	///***============================SETTERS============================***///
 
 	public void setAnd_creator(String and_creator) {
 		this.and_creator = and_creator;
 	}
 
 
-	///***FUNCIONES DE LA INTERFAZ***///
+	///***============================FUNCIONES DE LA INTERFAZ============================***///	
+	
+	/**
+	 * Muestra el ataque basico de un androide.
+	 */
 	
 	@Override
 	public int hit_basic() {
@@ -37,6 +44,10 @@ public class Android extends Character implements IAndroidAttacks {
 		return super.hit_basic()*3;
 	}
 
+	/**
+	 * Muestra el ataque especial de un androide.
+	 */
+	
 	@Override
 	public double hit_ki() {
 		
@@ -45,33 +56,52 @@ public class Android extends Character implements IAndroidAttacks {
 	
 	///***IAndroidAttacks***///
 
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String barrage() {
 		String msg = "Barrera de Energia: ";
 		return msg.concat("10000");
 	}
 
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String infinity_bullet() {
 		String msg = "Bala Infinita: ";
 		return msg.concat("3000");
 	}
 
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String power_wave() {
 		String msg = "Onda de Poder: ";
 		return msg.concat("6000");
 	}
 
+	/**
+	  * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
 	@Override
 	public String absorb_power() {
 		String msg = "Absorber poder: ";
 		return msg.concat(" total absorbido: 1000: "+getChar_ki()+1000);
 	}
 
-	///***METODOS***///
+	///***============================FUNCIONES============================***///
 	
-
 
 	@Override
 	public String toString() {
@@ -79,7 +109,13 @@ public class Android extends Character implements IAndroidAttacks {
 		return super.toString()+" | Raza: Androide " + " | Creador : "+and_creator + " | Ataque del dia: " + ataqueAlAzar();
 	}
 	
-	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
+	/**
+	 * 
+	 * Devuelve un ataque al azar para mostrar, mediante un random que genera un numero del 1 a total de ataques totales.
+	 * @return <b>el ataque que salió</b>
+	 */
+	
+	public String ataqueAlAzar() 
 	{
 		String msg="";
 		int eleccion=(int)(Math.random() * 4 + 1);

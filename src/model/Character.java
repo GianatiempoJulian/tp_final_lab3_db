@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 public abstract class Character implements Serializable  {
 
-//    private int char_id;
+
     private String char_name;
     private double char_ki;
     private boolean char_isAlive;
     private String char_planet;
 
+///***============================CONSTRUCTORES============================***///
+    
     public Character() {
     	char_isAlive = true;
     	char_ki = 100;
@@ -18,14 +20,15 @@ public abstract class Character implements Serializable  {
     }
 
     public Character(String char_name, double char_ki, boolean char_isAlive, String char_planet) {
-//        this.char_id = (int) (Math.random() * 10000000 + 1);
+    
         this.char_name = char_name;
         this.char_ki = char_ki;
         this.char_isAlive = char_isAlive;
         this.char_planet = char_planet;
     }
 
-    ///***GETTERS***///
+  ///***============================GETTERS============================***///
+   
 
     public String getChar_name() {
         return char_name;
@@ -43,7 +46,7 @@ public abstract class Character implements Serializable  {
         return char_planet;
     }
 
-    ///***SETTERS***///
+  ///***============================SETTERS============================***///
 
     public void setChar_name(String char_name) {
         this.char_name = char_name;
@@ -61,12 +64,21 @@ public abstract class Character implements Serializable  {
         this.char_planet = char_planet;
     }
 
-    ///***METODOS***///
+  ///***============================FUNCIONES============================***///
 
+
+	/**
+	 * Muestra el ataque basico de un personaje.
+	 */
+    
     public int hit_basic() {
         return 400;
     }
 
+    /**
+	 * Muestra el ataque especial de un personaje.
+	 */
+    
     public double hit_ki() {
         return 800;
     }
@@ -76,9 +88,15 @@ public abstract class Character implements Serializable  {
         return "Nombre: " +char_name+ " | Ki: " +char_ki+ " | Estado: " +boolean_ToStringIsAlive()+ " | Planeta Nacimiento: " + char_planet + " | Ataque fisico: " +hit_basic()+ " | Ataque de ki :" + hit_ki();
     }
 
-    ///***BOOLEAN A TEXTO***///
-
-    public String boolean_ToStringIsAlive() ///Cambia los valores de boolean a texto, en este caso para ver el estado del personaje.
+  ///***============================BOOLEAN TO TEXTO============================***///
+    
+    
+    /**
+     * Cambia los valores de boolean a texto, en este caso para ver el estado del personaje.
+     * @return <b>un String con el booleano transformado a texto.</b>
+     */
+    
+    public String boolean_ToStringIsAlive() 
     {
 
         String answer;
@@ -93,7 +111,12 @@ public abstract class Character implements Serializable  {
         return answer;
     }
 
-    public String boolean_ToStringYesorNo(boolean b) ///Cambia los valores de boolean a texto, en este caso para booleans que necesiten un si o no.
+    /**
+     * Cambia los valores de boolean a texto, en este caso para booleans que necesiten un si o no.
+     * @return <b>un String con el booleano transformado a texto. </b>
+     */
+    
+    public String boolean_ToStringYesorNo(boolean b) 
     {
 
         String answer;
@@ -107,6 +130,7 @@ public abstract class Character implements Serializable  {
         }
         return answer;
     }
+
 
 
 
