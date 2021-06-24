@@ -105,16 +105,19 @@ public class SaveRead {
 	
 	public static void readHashMap(File fuser,UserDataBase coleccion) {
 		
+		
 		ObjectInputStream entrada3 = null;
+		
 		try {
 			
 			boolean more = true;
+			
 			entrada3 = new ObjectInputStream(new FileInputStream(fuser));
 			
 			while (more) {
 				
 				User element = (User) entrada3.readObject();
-				
+							
 				coleccion.addUser(element);
 				
 			}
@@ -130,7 +133,6 @@ public class SaveRead {
 			System.out.println("No se encontro la clase");
 		} finally {
 			try {
-				
 				entrada3.close();
 			} catch (IOException e2) {
 				e2.printStackTrace();
@@ -138,6 +140,7 @@ public class SaveRead {
 		}
 	}
 	public static void writeHashMap(HashMap<Integer,User> collection, File mf) {
+		
 		ObjectOutputStream salida2 = null;
 		
 
@@ -151,7 +154,7 @@ public class SaveRead {
 			while (itrIterator.hasNext()) {
 			
 				Map.Entry me = (Map.Entry) itrIterator.next();
-				salida2.writeObject(me);
+				salida2.writeObject((User)me.getValue());
 			
 			}
 			

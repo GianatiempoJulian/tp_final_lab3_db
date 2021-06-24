@@ -30,7 +30,7 @@ public class Register {
         boolean mailAvailable=false;
         boolean usernameAvailable=false;
 
-        System.out.println("\nRegistro: ");
+        System.out.println("\n===================Registro===================");
 
         System.out.println("Eliga opcion: ");
         System.out.println("\n1.Administrador");

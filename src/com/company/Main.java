@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
-
 import org.json.JSONObject;
 import files.SaveRead;
 import model.Character;
@@ -41,13 +40,13 @@ public class Main {
 ////    	}
     	
     	///***============================JSON============================***///
+    	
     	 System.out.println("JSON:");
     	 File jsonFile = new File ("archivojson.json");
          String jsonString = "archivojson.json";
 
          //JsonUtiles.grabar(JsonObject.devolverJSON(),jsonString); // esto se tiene q ejecutar solo una vez
 
-     
         JSONObject jsonObject = new JSONObject(JsonUtiles.leer(jsonString));
         JsonObject.JSONtoJava(JsonUtiles.leer(jsonString));
   
@@ -75,15 +74,16 @@ public class Main {
     	CollectionPj<Custom> coleccionCustom = new CollectionPj<Custom>();  //a estar guardados los datos para trabajar
     	UserDataBase userList = new UserDataBase(); //creamos nuestra base de usuarios
     	
-    	SaveRead.writeHashMap(userList.getUserList(), archivousuario);
+   
     	
-    	SaveRead.readHash2(mfile, coleccionPj); /// se guarda lo q esta en el archivo en las colecciones	
+    	/// se guarda lo q esta en el archivo en las colecciones
+    	
+    	SaveRead.readHash2(mfile, coleccionPj); 	
     	SaveRead.readHash2(archivocustom, coleccionCustom);
     	SaveRead.readHashMap(archivousuario, userList);
     	
-    	User u = new User(); ///ver motivo ?¡
- 
-    	//SaveRead.readHash(mfile);
+    	User u = new User(); 
+    	
 
  
     	///***============================VARIABLES MANEJO MENU============================***///
@@ -97,7 +97,8 @@ public class Main {
     	while (eleccionWhile == 0) 
     	{
     		
-    		System.out.println("\nBienvenido a DragonJava! Que desea hacer?\n");
+    		System.out.println("\n===================Bienvenido a DragonJava! Que desea hacer?===================");
+    		System.out.println("\n");
     		System.out.println("Ingrese opcion:");
     		System.out.println("\n1.Registrarse");	
     		System.out.println("\n2.Ingresar");
@@ -122,10 +123,10 @@ public class Main {
     		eleccionWhile = scanner.nextInt();
     }
     	
-    	System.out.println("Fin del programa");
+    	 System.out.println("Fin del programa");
     	
     }
- 
+    
     
 }
  
