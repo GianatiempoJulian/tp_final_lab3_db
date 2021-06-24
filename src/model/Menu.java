@@ -14,8 +14,19 @@ public class Menu {
 
     static Scanner scanner;
 
-    ///***ADMINISTRADOR***///
+  ///***============================ADMINISTRADOR============================***///
 
+    /**
+     * Menu si ingresas con administrador, con todas sus funciones.
+     @param misPj - Coleccion de personajes de la serie.
+     * @param misCustom - Coleccion de personajes custom.
+     * @param db - Coleccion de usuarios.
+     * @param u - Usuario que entra en el sistema.
+     * @param fpj - Archivo  de personajes de la serie.
+     * @param fcustom - Archivo de personajes custom.
+     * @param fuser - Archivo de usuarios.
+     */
+    
     public static void menu_admin (CollectionPj misPj,CollectionPj misCustom,UserDataBase db,User u,File fpj,File fcustom,File fuser) //Menu de usuario administrador.
     {
         scanner = new Scanner(System.in);
@@ -55,6 +66,11 @@ public class Menu {
     
     }
 
+    /**
+     * Menu para trabajar con personajes de la serie. (ABMC)
+     * @param pj - Coleccion de personajes de la serie.
+     * @return <b>la coleccion nuevamente.</b>
+     */
     public static CollectionPj menuCharacter_admin(CollectionPj<Character> pj) ///Menu con funciones para personajes originales de la serie.
     {
         scanner = new Scanner(System.in);
@@ -246,6 +262,11 @@ public class Menu {
         
     }
 
+    /**
+     * Menu para trabajar con usuarios. (ABC)
+     * @param db - Coleccion de usuarios.
+     * @return <b>la coleccion nuevamente.</b>
+     */
     public static UserDataBase menuUser_admin(UserDataBase db) ///Menu con funciones para usuarios registrados.
     {
         scanner = new Scanner(System.in);
@@ -305,6 +326,13 @@ public class Menu {
         return db;
     }
 
+    /**
+     * Menu para trabajar con personajes custom. (ABC)
+     * @param customPj - Coleccion de personajes custom.
+     * @param u - Usuario que va a trabajar con el custom.
+     * @return <b>la coleccion nuevamente.</b>
+     */
+    
     public static CollectionPj menuCustom_admin(CollectionPj customPj,User u) ///Menu con funciones para personajes custom.
     {
         ///variables para iteratuar
@@ -379,8 +407,14 @@ public class Menu {
         return customPj;
     }
 
-    ///***MENUS DE MODIFICAR***///
+  ///***============================MENUS DE MODIFICAR============================***///
 
+    /**
+     * Funcion de modificar general, depende de la raza que sea el personaje enviado, entrara a distintos sub-menus para modificar.
+     * @param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModify_admin (Character c) ///Menu con opciones para modificar GENERAL.
     {
 
@@ -413,6 +447,12 @@ public class Menu {
         return  c;
     }
 
+    /**
+     * Menu para modificar saiyans.
+     *@param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModifySaiyan_admin (Saiyan c) ///Menu con opciones para modificar SAIYAN.
     {
         String name,planet;
@@ -508,6 +548,12 @@ public class Menu {
         return c;
     }
 
+    /**
+     * Menu para modificar humanos.
+     *@param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModifyHuman_admin (Human c) ///Menu con opciones para modificar HUMAN.
     {
         String name,planet;
@@ -583,6 +629,12 @@ public class Menu {
         return c;
     }
 
+    /**
+     * Menu para modificar namekianos.
+     *@param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModifyNamekian_admin (Namekian c) ///Menu con opciones para modificar NAMEKIAN.
     {
         String name,planet,namekClass;
@@ -665,6 +717,12 @@ public class Menu {
         return c;
     }
 
+    /**
+     * Menu para modificar demonios.
+     *@param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModifyDemon_admin (Demon c) ///Menu con opciones para modificar DEMON.
     {
         String name,planet;
@@ -746,6 +804,12 @@ public class Menu {
         return c;
     }
 
+    /**
+     * Menu para modificar androides.
+     *@param c- Personaje que desea modificar.
+     * @return <b>el personaje modificado (Tipo Character)</b>
+     */
+    
     public static Character menuModifyAndroid_admin (Android c) ///Menu con opciones para modificar ANDROID.
     {
         String name,planet,creator;
@@ -812,8 +876,17 @@ public class Menu {
         return c;
     }
 
-    ///***USUARIO NORMAL***///
+  ///***============================USUARIO COMUN============================***///
+    
 
+    /**
+     * Menu que aparece cuando ingresas como usuario comun.
+     * @param db - Coleccion de personajes de la serie.
+     * @param dbCustom - Coleccion de personajes custom.
+     * @param u - Usuario que ingreso
+     * @param fcustom - Archivo de personajes custom.
+     */
+    
     public static void menu_user (CollectionPj db,CollectionPj dbCustom,User u,File fcustom) ///Menu de usuario comun.
     {
         scanner = new Scanner(System.in);
@@ -845,6 +918,11 @@ public class Menu {
         
     }
 
+    /**
+     * Menu de personajes de la serie para usuarios comunes .
+     * @param db - Coleccion de personajes de la serie.
+     */
+    
     public static void menuCharacter_user(CollectionPj db) ///Menu con funciones para personajes originales de la serie.
     {
         scanner = new Scanner(System.in);
@@ -887,6 +965,13 @@ public class Menu {
         }
     }
 
+    /**
+     * Menu de custom, aquí si no tienes ningun Custom vinculado a tu cuenta, solo podras entrar a la opcion de crear uno nuevo, hecho esto, tendras acceso al resto de funciones.
+     * @param db - Coleccion de personajes de la serie.
+     * @param dbCustom - Coleccion d personajes custom.
+     * @param u - Usuario que ingreso.
+     * @return <b>la coleccion de custom.</b>
+     */
     public static CollectionPj<Custom> menuCustom_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu con funciones para personajes custom.
     {
         Custom aux = null;
@@ -901,6 +986,13 @@ public class Menu {
 		return dbCustom;
     }
 
+    /**
+     * Menu que aparece cuando tienes creado un custom para realizar cosas con el.
+     * @param db - Coleccion de personajes de la serie
+     * @param dbCustom - Coleccion de personajes custom.
+     * @param u - Usuario que ingreso.
+     */
+    
     public static void menuCustomCreated_user (CollectionPj db,CollectionPj dbCustom,User u) ///Menu con funciones para custom ya creado.
     {
         int eleccionWhile =0;
@@ -949,6 +1041,12 @@ public class Menu {
         }
     }
 
+    /**
+     * Menu para crear custom.
+     * @param dbCustom - Coleccion de personajes custom.
+     * @param u - Usuario que ingreso.
+     */
+    
     public static void menuCustomNew_user (CollectionPj dbCustom,User u) ///Menu con funciones para custom nuevo.
     {
         ///variables para iteratuar
@@ -1061,7 +1159,14 @@ public class Menu {
         }
     }
 
-    public static boolean isAvaliableOption(int eleccion) ///Para comprobar que la opcion colocada este entre 1 y 5.
+  ///***============================FUNCIONES============================***///
+    
+    /**
+     * Para comprobar que la eleccion que hizo el usuario este entre los parametros permitidos.
+     * @param eleccion - Un int con la eleccion que realizo al elegir un atributo del personaje.
+     * @return <b>booleano con respuesta de si es una opcion valida o no.</b>
+     */
+    public static boolean isAvaliableOption(int eleccion) 
     {
         boolean answer = false;
 

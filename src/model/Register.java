@@ -6,6 +6,13 @@ public class Register {
 
     static Scanner scanner;
 
+  ///***============================FUNCIONES============================***///
+    
+    /**
+     * Menu para registrarse.
+     * @param db - Coleccion de usuarios.
+     * @return <b>el usuario creado, tipo User.</b>
+     */
     public static User register_menu(UserDataBase db) ///Menu para que los nuevos usuarios se registren en el sistema.
     {
 

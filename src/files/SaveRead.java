@@ -104,24 +104,24 @@ public class SaveRead {
 	}
 	
 	public static void readHashMap(File fuser,UserDataBase coleccion) {
-		System.out.println("1");
+		
 		ObjectInputStream entrada3 = null;
 		try {
-			System.out.println("2");
+			
 			boolean more = true;
 			entrada3 = new ObjectInputStream(new FileInputStream(fuser));
-			System.out.println("3");
+			
 			while (more) {
-				System.out.println("4");
+				
 				User element = (User) entrada3.readObject();
-				System.out.println("5");
+				
 				coleccion.addUser(element);
-				System.out.println("6");
+				
 			}
 
 		} catch (EOFException e) {
-			System.out.println("7");
-			System.out.println("Fin de lectura");
+			
+			System.out.println("Fin de lectura de nuestros Usuarios");
 		}
 
 		catch (IOException ef) {
@@ -130,7 +130,7 @@ public class SaveRead {
 			System.out.println("No se encontro la clase");
 		} finally {
 			try {
-				System.out.println("8");
+				
 				entrada3.close();
 			} catch (IOException e2) {
 				e2.printStackTrace();

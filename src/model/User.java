@@ -11,6 +11,8 @@ public class User implements Serializable{
     private boolean isAdmin;
     private Custom myCustom;
 
+  ///***============================CONSTRUCTORES============================***///
+    
     public User(){};
 
     public User(String user_mail, String user_username, String user_password,boolean isAdmin)
@@ -23,7 +25,7 @@ public class User implements Serializable{
         this.myCustom = null;
     }
 
-    ///***GETTERS***///
+  ///***============================GETTERS============================***///
 
     public int getUser_id() {
         return user_id;
@@ -49,7 +51,7 @@ public class User implements Serializable{
         return myCustom;
     }
 
-    ///***SETTERS***///
+  ///***============================SETTERS============================***///
 
     public void setUser_mail(String user_mail) {
         this.user_mail = user_mail;
@@ -71,6 +73,8 @@ public class User implements Serializable{
         this.myCustom = myCustom;
     }
 
+   ///***============================FUNCIONES============================***///
+    
     @Override
     public String toString ()
     {

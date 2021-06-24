@@ -8,6 +8,8 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 	private String nam_type; ///tipo : comun o combatiente.
 	private boolean nam_fusion;
 	 
+	///***============================CONSTRUCTORES============================***///
+	
 	public Namekian() {
 		super();
 		nam_type = "comun";
@@ -21,7 +23,7 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		
 	}
 
-	///***GETTERS***///
+	///***============================GETTERS============================***///
 	
 	public String getNam_type() {
 		return nam_type;
@@ -31,7 +33,7 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		return nam_fusion;
 	}
 	
-	///***SETTERS***///
+	///***============================SETTERS============================***///
 	
 	public void setNam_fusion(boolean nam_fusion) {
 		this.nam_fusion = nam_fusion;
@@ -41,8 +43,59 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		this.nam_type = nam_type;
 	}
 
-	///***FUNCIONES DE LA INTERFAZ***///
+	///***============================FUNCIONES DE LA INTERFAZ============================***///
 
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
+	@Override
+	public String makankosappo() {
+		String msg = "Makankosappo: ";
+		return msg.concat("5500");
+	}
+
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
+	@Override
+	public String namek_fusion() {
+		String msg = "Fusion Namekiana: ";
+		return msg.concat("Poder incrementaria en 10000: " + getChar_ki()+10000);
+	}
+
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
+	@Override
+	public String healing() {
+		String msg = "Curacion Namekaina: ";
+		return msg.concat("Poder incrementaria en 1000: " + getChar_ki()+1000);
+	}
+
+	/**
+	 * Invoca el ataque que se menciona en la cabecera de la funcion.
+	 * @return <b>El nombre del ataque + el poder de dicho ataque</b>
+	 */
+	
+	@Override
+	public String hellzone_granade() {
+		String msg = "Granada infernal: ";
+		return msg.concat("8200");
+	}
+
+	///***============================FUNCIONES============================***///
+
+
+	/**
+	 * Muestra el ataque basico de un namekiano.
+	 */ 
+	
 	@Override
 	public int hit_basic() {
 		int retorno = 100;
@@ -52,6 +105,10 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		return retorno;
 	}
 	
+	/**
+	 * Muestra el ataque especial de un namekiano.
+	 */
+	
 	@Override
 	public double hit_ki() {
 		int retorno = 200;
@@ -60,37 +117,17 @@ public class Namekian extends Character implements INamekAttacks, Serializable {
 		}
 		return retorno;
 	}
-
-	@Override
-	public String makankosappo() {
-		String msg = "Makankosappo: ";
-		return msg.concat("5500");
-	}
-
-	@Override
-	public String namek_fusion() {
-		String msg = "Fusion Namekiana: ";
-		return msg.concat("Poder incrementaria en 10000: " + getChar_ki()+10000);
-	}
-
-	@Override
-	public String healing() {
-		String msg = "Curacion Namekaina: ";
-		return msg.concat("Poder incrementaria en 1000: " + getChar_ki()+1000);
-	}
-
-	@Override
-	public String hellzone_granade() {
-		String msg = "Granada infernal: ";
-		return msg.concat("8200");
-	}
-
-	///***METODOS***///
-
+	
 	@Override
 	public String toString() {
 		return super.toString()+"| Raza: Namekiano"+ " | Namekiano Tipo :" + nam_type + " | Esta fusionado: " + boolean_ToStringYesorNo(get_isfusion())+ " | Ataque del dia: " + ataqueAlAzar() ;
 	}
+	
+	/**
+	 * 
+	 * Devuelve un ataque al azar para mostrar, mediante un random que genera un numero del 1 a total de ataques totales.
+	 * @return <b>el ataque que salió</b>
+	 */
 	
 	public String ataqueAlAzar() ///Devuelve un ataque al azar para mostrar por dia, mediante un random que genera un numero del 1 a total de ataques totales.
 	{

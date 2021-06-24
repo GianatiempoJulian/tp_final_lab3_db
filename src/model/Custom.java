@@ -11,6 +11,8 @@ public class Custom extends Character{
 	private int gender;
 	
 	
+	///***============================CONSTRUCTORES============================***///
+	
 	public Custom () {
 		super();
 		eyes = 0;
@@ -37,34 +39,41 @@ public class Custom extends Character{
 
 	}
 
-	///***GETTERS***///
+	///***============================GETTERS============================***///
 
 	public int getEyes() {
 		return eyes;
 	}
+	
 	public int getHair() {
 		return hair;
 	}
+	
 	public int getAura() {
 		return aura;
 	}
+	
 	public int getSkin() {
 		return skin;
 	}
+	
 	public int getMouth() {
 		return mouth;
 	}
+	
 	public int getNose() {
 		return nose;
 	}
+	
 	public int getRace() {
 		return race;
 	}
+	
 	public int getGender() {
 		return gender;
 	}
 
-	///***SETTERS*///
+	///***============================SETTERS============================***///
 
 	public void setEyes(int eyes) {
 		this.eyes = eyes;
@@ -98,6 +107,8 @@ public class Custom extends Character{
 		this.gender = gender;
 	}
 
+	///***============================FUNCIONES============================***///
+	
 	@Override
 	public String toString() {
 		return super.toString()+ " | Ojos: " + eyes + " | Pelo: " + hair + " | Aura: " + aura + " | Piel: " + skin + " | Boca: " + mouth
